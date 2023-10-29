@@ -1,0 +1,89 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <script>
+
+        function initMap() {
+            const myLatLng = { lat: -25.363, lng: 131.044 };
+            const myLatLng2 = { lat: -22.363, lng: 131.044 };
+            const map = new google.maps.Map(document.getElementById("sample"), {
+                zoom: 4,
+                center: myLatLng,
+            });
+
+            new google.maps.Marker({
+                position: myLatLng,
+                map,
+                title: "Hello World!",
+            });
+
+            new google.maps.Marker({
+                position: myLatLng2,
+                map,
+                title: "Hello World!",
+            });
+
+            marker.addListener("click", () => {
+                map.setZoom(8);
+                map.setCenter(marker.getPosition());
+            });
+        }
+
+        google.maps.event.addDomListener(window, 'load', initMap);
+    </script>
+
+</head>
+
+<body>
+    <div id="sample" style="width:580px; height:400px;"></div>
+</body>
+
+</html>
+
+@* <html>
+<head>
+    <title>Simple Markers</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script type="module" src="./index.js"></script>
+</head>
+<body>
+    <div id="map"></div>
+
+    <!--
+      The `defer` attribute causes the callback to execute after the full HTML
+      document has been parsed. For non-blocking uses, avoiding race conditions,
+      and consistent behavior across browsers, consider loading using Promises.
+      See https://developers.google.com/maps/documentation/javascript/load-maps-js-api
+      for more information.
+      -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDi0cq25MNWj9hDW2rXk7LsmDHxcYPbdJg&callback=initMap&v=weekly"
+            defer></script>
+    <script>
+        function initMap() {
+            const myLatLng = { lat: -25.363, lng: 131.044 };
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 4,
+                center: myLatLng,
+            });
+
+            new google.maps.Marker({
+                position: myLatLng,
+                map,
+                title: "Hello World!",
+            });
+        }
+
+        window.initMap = initMap;
+    </script>
+</body>
+</html> *@
