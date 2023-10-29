@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SPSApps.Models.Parking;
 using SPSApps.Models.Register;
 
 namespace SPSApps.Models
@@ -10,5 +11,6 @@ namespace SPSApps.Models
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Building> Buildings { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using SPSApps.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Builder;
 
 namespace SPSApps
 {
@@ -34,9 +35,10 @@ namespace SPSApps
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthorization();
+
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Users}/{action=Create}");
+                pattern: "{controller=Home}/{action=Index}");
             app.MapRazorPages();
             app.Run();
         }

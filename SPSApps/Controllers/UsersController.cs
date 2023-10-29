@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using NuGet.Protocol.Plugins;
 using SPSApps.Models;
 using SPSApps.Models.Register;
 
@@ -19,15 +20,13 @@ namespace SPSApps.Controllers
             _context = context;
         }
 
-        // GET: Users
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> list()
         {
               return _context.Users != null ? 
                           View(await _context.Users.ToListAsync()) :
                           Problem("Entity set 'DatabaseEntity.Users'  is null.");
         }
 
-        // GET: Users/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Users == null)
@@ -45,29 +44,48 @@ namespace SPSApps.Controllers
             return View(user);
         }
 
-        // GET: Users/Create
-        public IActionResult Create()
+        public IActionResult Login()
         {
             return View();
         }
 
-        // POST: Users/Create
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginDTO login)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(f=> (f.Email == login.UserName  || f.PhoneNumber == login.UserName ) && f.Password == login.Password);
+            ViewBag.notFound = user == null;
+            return View();
+        }
+
+        public IActionResult Register()
+        {
+            return View();
+        }
+
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,Email,PhoneNumber,Password,Id,Status,CreatedDate,CreatedBy")] User user)
+        public async Task<IActionResult> Register([Bind("Name,Email,PhoneNumber,Password")] User user)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(user);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                var existing = await _context.Users.FirstOrDefaultAsync(f => f.Email == user.Email || f.PhoneNumber == user.PhoneNumber);
+                if(existing == null)
+                {
+                    _context.Add(user);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Login));
+                }
+                else
+                {
+                    ViewBag.found = existing != null;
+                }
+                
             }
             return View(user);
         }
 
-        // GET: Users/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Users == null)
