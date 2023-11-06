@@ -15,10 +15,10 @@ namespace SPSApps.Controllers
         //    _logger = logger;
         //}
 
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
+        public IActionResult Index()
+        {
+            return View();
+        }
 
         private readonly DatabaseEntity _context;
 
@@ -28,13 +28,13 @@ namespace SPSApps.Controllers
         }
 
 
-        public IActionResult Index()
+        public IActionResult Login()
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(LoginDTO login)
+        public async Task<IActionResult> Login(LoginDTO login)
         {
             var user = await _context.Users.FirstOrDefaultAsync(f => (f.Email == login.UserName || f.PhoneNumber == login.UserName) && f.Password == login.Password);
             ViewBag.notFound = user == null;
