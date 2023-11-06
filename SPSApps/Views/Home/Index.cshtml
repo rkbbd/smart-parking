@@ -1,88 +1,44 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model SPSApps.Models.Register.LoginDTO
+
+@{
+    Layout = null;
 }
 
 <!DOCTYPE html>
-<html>
-
+<html lang="en" dir="ltr">
 <head>
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
-
-    <script>
-
-        function initMap() {
-            const myLatLng = { lat: -25.363, lng: 131.044 };
-            const myLatLng2 = { lat: -22.363, lng: 131.044 };
-            const map = new google.maps.Map(document.getElementById("sample"), {
-                zoom: 4,
-                center: myLatLng,
-            });
-
-            new google.maps.Marker({
-                position: myLatLng,
-                map,
-                title: "Hello World!",
-            });
-
-            new google.maps.Marker({
-                position: myLatLng2,
-                map,
-                title: "Hello World!",
-            });
-
-            marker.addListener("click", () => {
-                map.setZoom(8);
-                map.setCenter(marker.getPosition());
-            });
-        }
-
-        google.maps.event.addDomListener(window, 'load', initMap);
-    </script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Registration or Sign Up form in HTML CSS | CodingLab </title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div id="sample" style="width:580px; height:400px;"></div>
-</body>
+    <div class="wrapper">
+        <h2>Login</h2>
+        <form asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="input-box">
+                <input asp-for="UserName" class="form-control" placeholder="Enter your email/phone" required>
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="input-box">
+                <input asp-for="Password" type="password" placeholder="Enter your password" class="form-control" required />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            @if (ViewBag.notFound != null && ViewBag.notFound)
+            {
+                <span class="text-danger" style="color:red">Username/Password do not match</span>
+            }
 
+
+            <div class="input-box button">
+                <input type="Submit" value="LogIn">
+            </div>
+            <div class="text">
+                <h3>Don't have an account? <a asp-controller="Users" asp-action="Register">Register now</a>
+            </div>
+        </form>
+    </div>
+    <link rel="stylesheet" href="~/css/users.css" asp-append-version="true" />
+</body>
 </html>
-
-@* <html>
-<head>
-    <title>Simple Markers</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-    <script type="module" src="./index.js"></script>
-</head>
-<body>
-    <div id="map"></div>
-
-    <!--
-      The `defer` attribute causes the callback to execute after the full HTML
-      document has been parsed. For non-blocking uses, avoiding race conditions,
-      and consistent behavior across browsers, consider loading using Promises.
-      See https://developers.google.com/maps/documentation/javascript/load-maps-js-api
-      for more information.
-      -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDi0cq25MNWj9hDW2rXk7LsmDHxcYPbdJg&callback=initMap&v=weekly"
-            defer></script>
-    <script>
-        function initMap() {
-            const myLatLng = { lat: -25.363, lng: 131.044 };
-            const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 4,
-                center: myLatLng,
-            });
-
-            new google.maps.Marker({
-                position: myLatLng,
-                map,
-                title: "Hello World!",
-            });
-        }
-
-        window.initMap = initMap;
-    </script>
-</body>
-</html> *@
