@@ -14,17 +14,18 @@ namespace SPSApps.Controllers
     public class UsersController : Controller
     {
         private readonly DatabaseEntity _context;
-
-        public UsersController(DatabaseEntity context)
+        private ISession _session;
+        public UsersController(DatabaseEntity context, IHttpContextAccessor httpContextAccessor)
         {
             _context = context;
+            _session = httpContextAccessor.HttpContext.Session;
         }
 
         public async Task<IActionResult> list()
         {
-              return _context.Users != null ? 
-                          View(await _context.Users.ToListAsync()) :
-                          Problem("Entity set 'DatabaseEntity.Users'  is null.");
+            return _context.Users != null ?
+                        View(await _context.Users.ToListAsync()) :
+                        Problem("Entity set 'DatabaseEntity.Users'  is null.");
         }
 
         public async Task<IActionResult> Details(int? id)
@@ -52,9 +53,26 @@ namespace SPSApps.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginDTO login)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(f=> (f.Email == login.UserName  || f.PhoneNumber == login.UserName ) && f.Password == login.Password);
+            var user = await _context.Users.FirstOrDefaultAsync(f => (f.Email == login.UserName || f.PhoneNumber == login.UserName) && f.Password == login.Password);
             ViewBag.notFound = user == null;
-            return View();
+            if (user == null)
+            {
+                return View();
+            }
+            else
+            {
+                _session.SetString("email", user.Email.ToString());
+                _session.SetString("name", user.Name.ToString());
+                return RedirectToAction("Index", "Home", new { login = true });
+            }
+        }
+
+        public async Task<IActionResult> LogOut()
+        {
+           
+                _session.Remove("email");
+                _session.Remove("name");
+                return RedirectToAction("Index", "Home", new { login = true });
         }
 
         public IActionResult Register()
@@ -71,7 +89,7 @@ namespace SPSApps.Controllers
             if (ModelState.IsValid)
             {
                 var existing = await _context.Users.FirstOrDefaultAsync(f => f.Email == user.Email || f.PhoneNumber == user.PhoneNumber);
-                if(existing == null)
+                if (existing == null)
                 {
                     _context.Add(user);
                     await _context.SaveChangesAsync();
@@ -81,7 +99,7 @@ namespace SPSApps.Controllers
                 {
                     ViewBag.found = existing != null;
                 }
-                
+
             }
             return View(user);
         }
@@ -168,14 +186,14 @@ namespace SPSApps.Controllers
             {
                 _context.Users.Remove(user);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool UserExists(int id)
         {
-          return (_context.Users?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Users?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

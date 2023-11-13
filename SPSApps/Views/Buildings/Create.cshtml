@@ -4,45 +4,47 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h3>Add Parking Area</h3>
 
-    <meta charset=utf-8 />
-    <title>A simple map</title>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
-    <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
+<meta charset=utf-8 />
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
 
-        #map {
-            position: absolute;
-            top: 50;
-            bottom: 50;
-            width: 100%;
-        }
-    </style>
+    /*   #map {
+                position: absolute;
+                top: 50;
+                bottom: 50;
+                width: 100%;
+            } */
+</style>
 
 
-  
 
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div style="width: 300px; height: 300px" id='map'></div>
-            <div class="form-group">
-                <input asp-for="TotalAvailableParking" class="form-control" placeholder="Enter total parking space/car" required />
-                <span asp-validation-for="TotalAvailableParking" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input asp-for="FairPerParking" type="number" class="form-control" placeholder="Enter parking charge" required />
-                <span asp-validation-for="FairPerParking" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <input asp-for="TotalAvailableParking" class="form-control" placeholder="Enter total parking space/car" required />
+        <span asp-validation-for="TotalAvailableParking" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input asp-for="FairPerParking" type="number" class="form-control" placeholder="Enter parking charge" required />
+        <span asp-validation-for="FairPerParking" class="text-danger"></span>
+    </div>
+    @Html.HiddenFor(model => model.Latitude)
+    @Html.HiddenFor(model => model.Longitude)
+    <div style="width: 300px; height: 300px" id='map'></div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
 <script>
     L.mapbox.accessToken = 'pk.eyJ1IjoicmFraWI0MjQiLCJhIjoiY2p6YXdsZ3g0MDU3NTNsbHNqYWY5NHI0cCJ9.meHRmzT5uSEBKJeHg000Gg';
     var map = L.mapbox.map('map')
@@ -53,13 +55,15 @@
 
         var latitude = e.latlng.lat;
         var longitude = e.latlng.lng;
-        mbox.addMarker(longitude, latitude);
+        document.getElementById('Latitude').value = latitude;
+        document.getElementById('Longitude').value = longitude;
+       // mbox.addMarker(longitude, latitude);
         console.log(e, latitude + " - " + longitude)
 
     })
 
 </script>
-<div>
+@* <div>
     <a asp-action="Index">Back to List</a>
-</div>
+</div> *@
 

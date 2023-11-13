@@ -22,9 +22,9 @@ namespace SPSApps.Controllers
         // GET: Buildings
         public async Task<IActionResult> Index()
         {
-              return _context.Buildings != null ? 
-                          View(await _context.Buildings.ToListAsync()) :
-                          Problem("Entity set 'DatabaseEntity.Buildings'  is null.");
+            return _context.Buildings != null ?
+                        View(await _context.Buildings.ToListAsync()) :
+                        Problem("Entity set 'DatabaseEntity.Buildings'  is null.");
         }
 
         // GET: Buildings/Details/5
@@ -56,15 +56,12 @@ namespace SPSApps.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Address,Latitude,Longitude,TotalAvailableParking,FairPerParking")] Building building)
+        public async Task<IActionResult> Create([Bind("Latitude,Longitude,TotalAvailableParking,FairPerParking")] Building building)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(building);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(building);
+            _context.Add(building);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
         }
 
         // GET: Buildings/Edit/5
@@ -150,14 +147,14 @@ namespace SPSApps.Controllers
             {
                 _context.Buildings.Remove(building);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool BuildingExists(int id)
         {
-          return (_context.Buildings?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Buildings?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

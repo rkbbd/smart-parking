@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "a9CcZzmVSdWINTVC8OCAYQ+LBPTnYxgiN2b0uylCQYU=",
+  "Hash": "oWM/f88Mfof8tGW1Wl5OmyZRizydM3/72GfE2+ANozA=",
   "Source": "SPSApps",
   "BasePath": "_content/SPSApps",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\img\\map.png",
+      "SourceId": "SPSApps",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "BasePath": "_content/SPSApps",
+      "RelativePath": "img/map.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\map.png"
     },
     {
       "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\js\\site.js",

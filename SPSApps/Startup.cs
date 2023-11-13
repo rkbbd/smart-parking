@@ -2,6 +2,7 @@
 using SPSApps.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace SPSApps
 {
@@ -20,6 +21,10 @@ namespace SPSApps
             services.AddDbContext<DatabaseEntity>(options =>
                 options.UseSqlServer(configRoot.GetConnectionString("DefaultConnection")));
             services.AddRazorPages();
+            services.AddMvc()
+       .AddSessionStateTempDataProvider();
+            services.AddSession();
+            services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             //services.AddControllersWithViews();
         }
         public void Configure(WebApplication app, IWebHostEnvironment env)
@@ -35,7 +40,7 @@ namespace SPSApps
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthorization();
-
+            app.UseSession();
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}");

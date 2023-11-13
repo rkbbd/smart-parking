@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using NuGet.Protocol.Plugins;
 using SPSApps.Models;
 using SPSApps.Models.Register;
 using System.Diagnostics;
@@ -8,29 +10,26 @@ namespace SPSApps.Controllers
 {
     public class HomeController : Controller
     {
-        //private readonly ILogger<HomeController> _logger;
-
-        //public HomeController(ILogger<HomeController> logger)
-        //{
-        //    _logger = logger;
-        //}
+        private readonly DatabaseEntity _context;
+        private ISession _session;
+        public HomeController(DatabaseEntity context, IHttpContextAccessor httpContextAccessor)
+        {
+            _context = context;
+            _session = httpContextAccessor.HttpContext.Session;
+        }
 
         public IActionResult Index()
         {
-            return View();
-        }
-
-        private readonly DatabaseEntity _context;
-
-        public HomeController(DatabaseEntity context)
-        {
-            _context = context;
-        }
-
-
-        public IActionResult Login()
-        {
-            return View();
+            var email =  _session.GetString("email");
+            if (email != null)
+            {
+                return View();
+            }
+            else
+            {
+                //return View();//TODO Remove
+                return RedirectToAction("Login", "Users", new { login = true });
+            }
         }
 
         [HttpPost]
@@ -39,17 +38,6 @@ namespace SPSApps.Controllers
             var user = await _context.Users.FirstOrDefaultAsync(f => (f.Email == login.UserName || f.PhoneNumber == login.UserName) && f.Password == login.Password);
             ViewBag.notFound = user == null;
             return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
