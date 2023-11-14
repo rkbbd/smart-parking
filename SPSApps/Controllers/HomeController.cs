@@ -21,13 +21,15 @@ namespace SPSApps.Controllers
         public IActionResult Index()
         {
             var email =  _session.GetString("email");
+            var name = _session.GetString("name");
+            HomeDTO home = new HomeDTO( name, email);
             if (email != null)
             {
-                return View();
+                return View(home);
             }
             else
             {
-                //return View();//TODO Remove
+               return View(new HomeDTO("name", "email"));//TODO Remove
                 return RedirectToAction("Login", "Users", new { login = true });
             }
         }

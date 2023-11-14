@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\SPSApps.bundle.scp.css"
     },
     {
+      "Id": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\css\\home.css",
+      "PackagePath": "staticwebassets\\css\\home.css"
+    },
+    {
       "Id": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -19,6 +23,10 @@
     {
       "Id": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\img\\map.png",
       "PackagePath": "staticwebassets\\img\\map.png"
+    },
+    {
+      "Id": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\img\\profile.png",
+      "PackagePath": "staticwebassets\\img\\profile.png"
     },
     {
       "Id": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\js\\site.js",
