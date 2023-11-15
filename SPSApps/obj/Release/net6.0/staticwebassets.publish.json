@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2sP8odSyHNDYu4neitpF+Iu9wL0TcTbX8H05yKDldhQ=",
+  "Hash": "XL9jUWJWwRc4OuNcj5f7M+4LH2VEBVXUKJ7XXbc8Bik=",
   "Source": "SPSApps",
   "BasePath": "_content/SPSApps",
   "Mode": "Default",
@@ -119,6 +119,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\img\\home.png",
+      "SourceId": "SPSApps",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "BasePath": "_content/SPSApps",
+      "RelativePath": "img/home.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\home.png"
+    },
+    {
       "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\img\\map.png",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
@@ -134,6 +151,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\map.png"
+    },
+    {
+      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\img\\praking.png",
+      "SourceId": "SPSApps",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "BasePath": "_content/SPSApps",
+      "RelativePath": "img/praking.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\praking.png"
     },
     {
       "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\img\\profile.png",

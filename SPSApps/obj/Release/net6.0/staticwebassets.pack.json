@@ -21,8 +21,16 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\img\\home.png",
+      "PackagePath": "staticwebassets\\img\\home.png"
+    },
+    {
       "Id": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\img\\map.png",
       "PackagePath": "staticwebassets\\img\\map.png"
+    },
+    {
+      "Id": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\img\\praking.png",
+      "PackagePath": "staticwebassets\\img\\praking.png"
     },
     {
       "Id": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\img\\profile.png",

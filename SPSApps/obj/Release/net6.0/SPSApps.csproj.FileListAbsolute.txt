@@ -283,6 +283,8 @@ D:\Project\DotNet\smart-parking\SPSApps\obj\Release\net6.0\staticwebassets\msbui
 D:\Project\DotNet\smart-parking\SPSApps\obj\Release\net6.0\staticwebassets.pack.json
 D:\Project\DotNet\smart-parking\SPSApps\obj\Release\net6.0\staticwebassets.build.json
 D:\Project\DotNet\smart-parking\SPSApps\obj\Release\net6.0\staticwebassets.development.json
+D:\Project\DotNet\smart-parking\SPSApps\obj\Release\net6.0\scopedcss\Pages01\Shared\_Layout.cshtml.rz.scp.css
+D:\Project\DotNet\smart-parking\SPSApps\obj\Release\net6.0\scopedcss\Views\Shared\_Layout - Copy.cshtml.rz.scp.css
 D:\Project\DotNet\smart-parking\SPSApps\obj\Release\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\Project\DotNet\smart-parking\SPSApps\obj\Release\net6.0\scopedcss\bundle\SPSApps.styles.css
 D:\Project\DotNet\smart-parking\SPSApps\obj\Release\net6.0\scopedcss\projectbundle\SPSApps.bundle.scp.css
@@ -292,5 +294,3 @@ D:\Project\DotNet\smart-parking\SPSApps\obj\Release\net6.0\refint\SPSApps.dll
 D:\Project\DotNet\smart-parking\SPSApps\obj\Release\net6.0\SPSApps.pdb
 D:\Project\DotNet\smart-parking\SPSApps\obj\Release\net6.0\SPSApps.genruntimeconfig.cache
 D:\Project\DotNet\smart-parking\SPSApps\obj\Release\net6.0\ref\SPSApps.dll
-D:\Project\DotNet\smart-parking\SPSApps\obj\Release\net6.0\scopedcss\Pages01\Shared\_Layout.cshtml.rz.scp.css
-D:\Project\DotNet\smart-parking\SPSApps\obj\Release\net6.0\scopedcss\Views\Shared\_Layout - Copy.cshtml.rz.scp.css
