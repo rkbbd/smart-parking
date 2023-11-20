@@ -2,21 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SPSApps.Models;
 using SPSApps.Models.Parking;
+using SPSApps.Models.Register;
 
 namespace SPSApps.Controllers
 {
     public class BuildingsController : Controller
     {
-        private readonly DatabaseEntity _context;
 
-        public BuildingsController(DatabaseEntity context)
+        private readonly DatabaseEntity _context;
+        private ISession _session;
+        public BuildingsController(DatabaseEntity context, IHttpContextAccessor httpContextAccessor)
         {
             _context = context;
+            _session = httpContextAccessor.HttpContext.Session;
         }
 
         // GET: Buildings
@@ -48,7 +52,18 @@ namespace SPSApps.Controllers
         // GET: Buildings/Create
         public IActionResult Create()
         {
-            return View();
+            var email = _session.GetString("email");
+            var name = _session.GetString("name");
+            BuildingDTO home = new BuildingDTO("",0, 0, 0,0,name, email);
+            if (email != null)
+            {
+                return View(home);
+            }
+            else
+            {
+                //return View(new BuildingDTO("", 0,0 , 3, 50, "name", "email"));//TODO Remove
+                return RedirectToAction("Login", "Users", new { login = true });
+            }
         }
 
         // POST: Buildings/Create
@@ -60,7 +75,7 @@ namespace SPSApps.Controllers
         {
             _context.Add(building);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), "Home");
 
         }
 

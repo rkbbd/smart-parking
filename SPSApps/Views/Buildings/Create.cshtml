@@ -1,15 +1,16 @@
-﻿@model SPSApps.Models.Parking.Building
+﻿@model SPSApps.Models.Parking.BuildingDTO
 
 @{
     ViewData["Title"] = "Create";
 }
 
-<h3>Add Parking Area</h3>
 
-<meta charset=utf-8 />
+
+@* <meta charset=utf-8 />
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
-<link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
+<link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' /> *@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <style>
     body {
         margin: 0;
@@ -24,28 +25,90 @@
             } */
 </style>
 
-
+<div style="width: 90%; margin: 20px auto">
+<div style="width: 100%; height: 100px">
+        <h5>Add Parking Area</h5>
+    <div style="float: left">
+        <img style="width:60px" class="profile-img" src="~/img/profile.png" />
+    </div>
+    <div style="margin-left: 18px; float: left">
+        <h5 style="font-weight:bold">@Model.Name</h5>
+        <h5>@Model.Email</h5>
+    </div>
+</div>
 
 
 <form asp-action="Create">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
     <div class="form-group">
+            <lebel>Available space/car</lebel>
         <input asp-for="TotalAvailableParking" class="form-control" placeholder="Enter total parking space/car" required />
         <span asp-validation-for="TotalAvailableParking" class="text-danger"></span>
     </div>
     <div class="form-group">
+        <lebel>Parking Charge</lebel>
         <input asp-for="FairPerParking" type="number" class="form-control" placeholder="Enter parking charge" required />
         <span asp-validation-for="FairPerParking" class="text-danger"></span>
     </div>
     @Html.HiddenFor(model => model.Latitude)
     @Html.HiddenFor(model => model.Longitude)
-    <div style="width: 300px; height: 300px" id='map'></div>
-    <div class="form-group">
+   @*  <div style="width: 300px; height: 300px" id='map'></div> *@
+        <div style="float:none;">
+            <style>
+                .wrapper {
+                    height: 100%;
+                }
+            </style>
+
+            <div class="wrapper">
+
+                <div style="width:86%; height:300px; margin: 0 auto;top: 10px" id="map"></div>
+ 
+                <!-- prettier-ignore -->
+                <script>
+                    (g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
+                        ({ key: "AIzaSyDYW_g6zWahp8GXuGARpDp7MiMZih6VdU8", v: "weekly" });</script>
+                <script>
+                    let map;
+
+                    async function initMap() {
+                        const { Map } = await google.maps.importLibrary("maps");
+
+                        map = new Map(document.getElementById("map"), {
+                            center: { lat: 23.8041, lng: 90.4152},
+                            zoom: 10,
+                        });
+                        await google.maps.event.addListener(map, 'click', function (event) {
+                            console.log(event);
+                            placeMarker(event.latLng);
+                        });
+
+                    }
+
+                    initMap();
+
+                  
+                    function placeMarker(location) {
+                        const latLang =  location.toJSON();
+                        document.getElementById('Latitude').value = latLang.lat;
+                        document.getElementById('Longitude').value = latLang.lng;
+                        console.log(latLang.lat);
+                        var marker = new google.maps.Marker({
+                            position: location,
+                            map: map
+                        });
+                    }
+                </script>
+            </div>
+        </div>
+
+    <div style="width: 100%; margin-top: 15px" class="form-group">
         <input type="submit" value="Create" class="btn btn-primary" />
     </div>
 </form>
-<script>
+</div>
+@* <script>
     L.mapbox.accessToken = 'pk.eyJ1IjoicmFraWI0MjQiLCJhIjoiY2p6YXdsZ3g0MDU3NTNsbHNqYWY5NHI0cCJ9.meHRmzT5uSEBKJeHg000Gg';
     var map = L.mapbox.map('map')
         .setView([23.768820803633947, -269.57486450672155], 30)
@@ -62,7 +125,7 @@
 
     })
 
-</script>
+</script> *@
 @* <div>
     <a asp-action="Index">Back to List</a>
 </div> *@

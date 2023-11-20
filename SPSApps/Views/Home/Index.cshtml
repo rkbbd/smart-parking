@@ -1,7 +1,6 @@
 ﻿@model SPSApps.Models.Register.HomeDTO
-
 @{
-   // Layout = null;
+    // Layout = null;
 }
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -14,6 +13,10 @@
         <div style="margin-left: 18px; float: left">
             <h5 style="font-weight:bold">@Model.Name</h5>
             <h5>@Model.Email</h5>
+        </div>
+        <div style="float:right">
+
+            <a class="nav-link text-dark" asp-controller="Users" asp-action="LogOut">LogOut</a>
         </div>
     </div>
 
@@ -29,6 +32,25 @@
             <div style="background-repeat:no-repeat;background-image: linear-gradient(to right, #FFFF, #7465E4);background-position:-25px -25px;background-size:  100% 350px; margin: 0 auto; height: 350px;">
                 <div style="width:86%; height:300px; margin: 0 auto;top: 10px" id="map"></div>
             </div>
+            <div id="parking" style="display:none">
+                Apply for booking:
+                <br />
+                Rate/Hour: 
+                <div id="parking-details">
+
+                </div>
+
+                <h6>
+                    Welcome to Maplewood Village! Nestled in the heart of the picturesque Green Valley, Maplewood is a vibrant community known for its tree-lined streets, friendly neighbors, and charming local shops. Residents enjoy easy access to the nearby Green Valley Park, perfect for leisurely strolls and family picnics.
+                </h6>
+
+                <div class="input-box button">
+                    <a asp-controller="Users" asp-action="Register">Request Parking</a>
+                </div>
+                <div class="input-box button">
+                    <a asp-controller="Users" asp-action="Register">Emergency Parking</a>
+                </div>
+            </div>
             <!-- prettier-ignore -->
             <script>
                 (g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
@@ -37,13 +59,58 @@
                 let map;
 
                 async function initMap() {
+
                     const { Map } = await google.maps.importLibrary("maps");
 
+                    // const currentLocation = await getCurrentPosition();
                     map = new Map(document.getElementById("map"), {
-                        center: { lat: -34.397, lng: 150.644 },
-                        zoom: 8,
+                        center: { lat: 23.81, lng: 90.42 },
+                        zoom: 20,
                     });
+
+                    // marker = new google.maps.Marker({
+                    //     position: new google.maps.LatLng(currentLocation.coords.latitude, currentLocation.coords.longitude),
+                    //     label: "You",
+                    //     map: map
+                    // });
+                    var locations = @Json.Serialize(Model.Buildings);
+
+                    var infowindow = new google.maps.InfoWindow();
+
+                    var marker, i;
+
+                    console.log(locations)
+                    for (i = 0; i < locations.length; i++) {
+                        marker = new google.maps.Marker({
+                            position: new google.maps.LatLng(locations[i].latitude, locations[i].longitude),
+                            icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/parking_lot_maps.png",
+                            map: map
+                        });
+
+                        google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                            return function () {
+                               // window.location.href = "/{controller}/{action}/{params}";
+                               // infowindow.setContent("asdf");
+                              //  infowindow.open(map, marker);
+                              debugger
+                                var details = document.getElementById("parking-details");
+                                var parking = document.getElementById("parking");
+                                parking.style.display = 'block';
+                                details.innerHTML = locations[i].fairPerParking
+                            }
+                        })(marker, i));
+                    }
+
                 }
+
+               // function getCurrentPosition() {
+               //      return new Promise((resolve, reject) => {
+               //          navigator.geolocation.getCurrentPosition(
+               //              position => resolve(position),
+               //              error => reject(error)
+               //          )
+               //      })
+               //  }
 
                 initMap();
             </script>

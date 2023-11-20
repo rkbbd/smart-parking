@@ -22,14 +22,15 @@ namespace SPSApps.Controllers
         {
             var email =  _session.GetString("email");
             var name = _session.GetString("name");
-            HomeDTO home = new HomeDTO( name, email);
+            var allLocation = _context.Buildings.ToList();
+            HomeDTO home = new HomeDTO( name, email, allLocation);
             if (email != null)
             {
                 return View(home);
             }
             else
             {
-               return View(new HomeDTO("name", "email"));//TODO Remove
+               return View(new HomeDTO("name", "email", allLocation));//TODO Remove
                 return RedirectToAction("Login", "Users", new { login = true });
             }
         }
