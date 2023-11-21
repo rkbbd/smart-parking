@@ -44,11 +44,11 @@
                     Welcome to Maplewood Village! Nestled in the heart of the picturesque Green Valley, Maplewood is a vibrant community known for its tree-lined streets, friendly neighbors, and charming local shops. Residents enjoy easy access to the nearby Green Valley Park, perfect for leisurely strolls and family picnics.
                 </h6>
 
-                <div class="input-box button">
-                    <a asp-controller="Users" asp-action="Register">Request Parking</a>
+                <div class="input-box button" id="request-parking">
+                   @*  <a asp-controller="Users" asp-action="Register" asp-route-level="3">Request Parking</a> *@
                 </div>
-                <div class="input-box button">
-                    <a asp-controller="Users" asp-action="Register">Emergency Parking</a>
+                <div class="input-box button" id="emergency-parking">
+                    @* <a asp-controller="Users" asp-action="Register" asp-route-emergency="3">Emergency Parking</a> *@
                 </div>
             </div>
             <!-- prettier-ignore -->
@@ -96,6 +96,11 @@
                                 var details = document.getElementById("parking-details");
                                 var parking = document.getElementById("parking");
                                 parking.style.display = 'block';
+
+                                var requestParking = document.getElementById("request-parking");
+                                var emergencyParking = document.getElementById("emergency-parking");
+                                requestParking.innerHTML = `<a href="/Home/Confirm?emergency=${locations[i].id}">Emergency Parking</a>`
+                                emergencyParking.innerHTML = `<a href="/Home/Confirm?request=${locations[i].id}">Parking Request</a>`
                                 details.innerHTML = locations[i].fairPerParking
                             }
                         })(marker, i));
