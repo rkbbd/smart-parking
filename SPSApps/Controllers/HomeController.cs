@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NuGet.Protocol.Plugins;
 using SPSApps.Models;
+using SPSApps.Models.Parking;
 using SPSApps.Models.Register;
 using System.Diagnostics;
 
@@ -54,11 +55,11 @@ namespace SPSApps.Controllers
         }
 
         [HttpPost]
-        public IActionResult Confirm(int Id)
+        public IActionResult Confirm([Bind("Id")] ParkingRequest parkingRequest)
         {
             var email = _session.GetString("email");
             var name = _session.GetString("name");
-            var allLocation = _context.Buildings.FirstOrDefault(f => f.Id == Id);
+            var allLocation = _context.Buildings.FirstOrDefault(f => f.Id == parkingRequest.Id);
             ConfirmDTO home = new ConfirmDTO(name, email, allLocation, false);
             if (email != null)
             {

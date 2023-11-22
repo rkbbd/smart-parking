@@ -12,5 +12,6 @@ namespace SPSApps.Models
 
         public DbSet<User> Users { get; set; }
         public DbSet<Building> Buildings { get; set; }
+        public DbSet<RequestParking> RequestParkings { get; set; } 
     }
 }

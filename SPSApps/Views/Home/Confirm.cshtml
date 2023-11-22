@@ -48,8 +48,8 @@
                 </div>
                 <div class="input-box button" id="emergency-parking">
                     <form asp-action="Confirm">
-                        @Html.HiddenFor(f=>f.Buildings.Id);
-                            <button type="submit">Confirm</button>
+                        <input Name="id" name="SomeProperty" id="some_property" hidden value="@Model.Buildings.Id" />
+                        <button type="submit">Confirm</button>
                     </form>
                 </div>
             </div>
