@@ -100,7 +100,7 @@
                                 var requestParking = document.getElementById("request-parking");
                                 var emergencyParking = document.getElementById("emergency-parking");
                                 requestParking.innerHTML = `<a href="/Home/Confirm?emergency=${locations[i].id}">Emergency Parking</a>`
-                                emergencyParking.innerHTML = `<a href="/Home/Confirm?request=${locations[i].id}">Parking Request</a>`
+                                emergencyParking.innerHTML = `<a href="/Home/Confirm?request=${locations[i+1].id}">Parking Request</a>`
                                 details.innerHTML = locations[i].fairPerParking
                             }
                         })(marker, i));

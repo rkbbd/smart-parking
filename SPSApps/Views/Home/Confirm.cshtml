@@ -48,6 +48,7 @@
                 </div>
                 <div class="input-box button" id="emergency-parking">
                     <form asp-action="Confirm">
+                        <input Name="isEmergency" name="SomeProperty" type="number" hidden id="some_property" value="@Model.isEmergency" />
                         <input Name="id" name="SomeProperty" id="some_property" hidden value="@Model.Buildings.Id" />
                         <button type="submit">Confirm</button>
                     </form>

@@ -41,35 +41,41 @@ namespace SPSApps.Controllers
         {
             var email = _session.GetString("email");
             var name = _session.GetString("name");
+            //string url = HttpContext.Request.QueryString.Value;
+            //String data = url.Split('?')[1].Split('=')[1];
             var allLocation = _context.Buildings.FirstOrDefault(f=>f.Id == emergency || f.Id == request);
-            ConfirmDTO home = new ConfirmDTO(name, email, allLocation, emergency > 1);
+            ConfirmDTO home = new ConfirmDTO(name, email, allLocation, emergency >= 1 ? 1 : 0 );
             if (email != null)
             {
                 return View(home);
             }
             else
             {
-                return View(new ConfirmDTO("name", "email", allLocation, false));//TODO Remove
+                return View(home);//TODO Remove
                 return RedirectToAction("Login", "Users", new { login = true });
             }
         }
 
         [HttpPost]
-        public IActionResult Confirm([Bind("Id")] ParkingRequest parkingRequest)
+        public IActionResult Confirm([Bind("Id, IsEmergency")] ParkingRequest parkingRequest )
         {
+           
             var email = _session.GetString("email");
             var name = _session.GetString("name");
             var allLocation = _context.Buildings.FirstOrDefault(f => f.Id == parkingRequest.Id);
-            ConfirmDTO home = new ConfirmDTO(name, email, allLocation, false);
-            if (email != null)
+
+            _context.RequestParkings.Add(new RequestParking()
             {
-                return View(home);
-            }
-            else
-            {
-                return View(new ConfirmDTO("name", "email", allLocation, false));//TODO Remove
-                return RedirectToAction("Login", "Users", new { login = true });
-            }
+                AccessTime = DateTime.Now,
+                IsActive = parkingRequest.IsEmergency,
+                BuildingId = allLocation.Id,
+                Fair = allLocation.FairPerParking,
+                Status = 1
+            });
+
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Home", new { login = true });
         }
 
         [HttpPost]
