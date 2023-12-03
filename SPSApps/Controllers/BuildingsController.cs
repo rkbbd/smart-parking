@@ -73,6 +73,7 @@ namespace SPSApps.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Latitude,Longitude,TotalAvailableParking,FairPerParking")] Building building)
         {
+            building.email = _session.GetString("email");
             _context.Add(building);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index), "Home");

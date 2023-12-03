@@ -7,5 +7,6 @@
         public decimal Longitude { get; set; }
         public int TotalAvailableParking { get; set; }
         public decimal FairPerParking { get; set; }
+        public string email { get; set; }
     }
 }

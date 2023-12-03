@@ -36,6 +36,27 @@ namespace SPSApps.Controllers
             }
         }
 
+        public async Task<IActionResult> RequestParking()
+        {
+            var email = _session.GetString("email");
+            var name = _session.GetString("name");
+            //var allLocation = _context.Buildings.ToList();
+            //HomeDTO home = new HomeDTO(name, email, allLocation);
+            //if (email != null)
+            //{
+            //    return View(home);
+            //}
+            //else
+            //{
+            //    return View(new HomeDTO("name", "email", allLocation));//TODO Remove
+            //    return RedirectToAction("Login", "Users", new { login = true });
+            //}
+            var databaseEntity = _context.RequestParkings.Include(r => r.Building).Where(f=>f.Building.email == email && f.IsActive == 0);
+            List<RequestParking> data = await databaseEntity.ToListAsync();
+            RequestParkingDTO parking = new RequestParkingDTO( data,  email,  name );
+            return View(parking);
+        }
+
 
         public IActionResult Confirm(int emergency, int request)
         {
@@ -43,7 +64,7 @@ namespace SPSApps.Controllers
             var name = _session.GetString("name");
             //string url = HttpContext.Request.QueryString.Value;
             //String data = url.Split('?')[1].Split('=')[1];
-            var allLocation = _context.Buildings.FirstOrDefault(f=>f.Id == emergency || f.Id == request);
+            var allLocation = _context.Buildings.FirstOrDefault(f=>(f.Id == emergency || f.Id == request));
             ConfirmDTO home = new ConfirmDTO(name, email, allLocation, emergency >= 1 ? 1 : 0 );
             if (email != null)
             {
@@ -70,8 +91,9 @@ namespace SPSApps.Controllers
                 IsActive = parkingRequest.IsEmergency,
                 BuildingId = allLocation.Id,
                 Fair = allLocation.FairPerParking,
+                RequestUserEmail = email,
                 Status = 1
-            });
+            });;
 
             _context.SaveChanges();
 

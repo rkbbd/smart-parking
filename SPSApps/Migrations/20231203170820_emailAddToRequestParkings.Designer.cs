@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SPSApps.Models;
 
@@ -11,9 +12,11 @@ using SPSApps.Models;
 namespace SPSApps.Migrations
 {
     [DbContext(typeof(DatabaseEntity))]
-    partial class DatabaseEntityModelSnapshot : ModelSnapshot
+    [Migration("20231203170820_emailAddToRequestParkings")]
+    partial class emailAddToRequestParkings
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
