@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\img\\cross.png",
+      "PackagePath": "staticwebassets\\img\\cross.png"
+    },
+    {
       "Id": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\img\\home.png",
       "PackagePath": "staticwebassets\\img\\home.png"
     },
@@ -35,6 +39,10 @@
     {
       "Id": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\img\\profile.png",
       "PackagePath": "staticwebassets\\img\\profile.png"
+    },
+    {
+      "Id": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\img\\tick.png",
+      "PackagePath": "staticwebassets\\img\\tick.png"
     },
     {
       "Id": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\js\\site.js",

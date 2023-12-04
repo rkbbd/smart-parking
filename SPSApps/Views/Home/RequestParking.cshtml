@@ -31,17 +31,22 @@
         </style>
 
         <div class="wrapper">
+            Parking Request
             @foreach (var item in Model.RequestParkings.Select((value, i) => new { i, value }))
             {
-                <div>Car <span>@(item.i + 1 )
-                         </span> </div>
+                <div>
+                    Car <span>
+                        @(item.i + 1)
+                    </span>
+                    <a asp-action="EditRequestParking" asp-route-id="@item.value.Id"><img width="20px" src="/img/tick.png" /></a>
 
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.value.Id">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.value.Id">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.value.Id">Delete</a>
-                    </td>
-                
+                    <a asp-action="CancelRequestParking" asp-route-id="@item.value.Id"><img width="20px" src="/img/cross.png" /></a>
+                </div>
+
+
+
+
+
             }
         </div>
     </div>

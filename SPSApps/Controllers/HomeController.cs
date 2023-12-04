@@ -40,21 +40,44 @@ namespace SPSApps.Controllers
         {
             var email = _session.GetString("email");
             var name = _session.GetString("name");
-            //var allLocation = _context.Buildings.ToList();
-            //HomeDTO home = new HomeDTO(name, email, allLocation);
-            //if (email != null)
-            //{
-            //    return View(home);
-            //}
-            //else
-            //{
-            //    return View(new HomeDTO("name", "email", allLocation));//TODO Remove
-            //    return RedirectToAction("Login", "Users", new { login = true });
-            //}
-            var databaseEntity = _context.RequestParkings.Include(r => r.Building).Where(f=>f.Building.email == email && f.IsActive == 0);
+
+            var databaseEntity = _context.RequestParkings.Include(r => r.Building).Where(f=>f.Building.email == email && f.IsActive == 0 && f.Status == 1);
             List<RequestParking> data = await databaseEntity.ToListAsync();
             RequestParkingDTO parking = new RequestParkingDTO( data,  email,  name );
             return View(parking);
+        }
+
+        public async Task<IActionResult> EditRequestParking(int? id)
+        {
+            if (id == null || _context.Buildings == null)
+            {
+                return NotFound();
+            }
+
+            var building = await _context.RequestParkings.FindAsync(id);
+            building.IsActive = 1;
+            _context.Update(building);
+            _context.SaveChanges();
+
+            return RedirectToAction("RequestParking");
+        }
+
+        public async Task<IActionResult> CancelRequestParking(int? id)
+        {
+            if (id == null || _context.Buildings == null)
+            {
+                return NotFound();
+            }
+
+            var building = await _context.RequestParkings.FindAsync(id);
+            building.Status = 2;
+            _context.Update(building);
+            _context.SaveChanges();
+            if (building == null)
+            {
+                return NotFound();
+            }
+            return RedirectToAction("RequestParking");
         }
 
 
