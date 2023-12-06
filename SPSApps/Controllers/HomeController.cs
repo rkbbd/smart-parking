@@ -31,7 +31,6 @@ namespace SPSApps.Controllers
             }
             else
             {
-               return View(new HomeDTO("name", "email", allLocation));//TODO Remove
                 return RedirectToAction("Login", "Users", new { login = true });
             }
         }
@@ -95,7 +94,6 @@ namespace SPSApps.Controllers
             }
             else
             {
-                return View(home);//TODO Remove
                 return RedirectToAction("Login", "Users", new { login = true });
             }
         }

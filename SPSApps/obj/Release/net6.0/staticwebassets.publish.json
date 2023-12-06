@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XL9jUWJWwRc4OuNcj5f7M+4LH2VEBVXUKJ7XXbc8Bik=",
+  "Hash": "1FNnW1U5folWV0+3h/aQy2P4Y3IqmlRun1rblcPb27c=",
   "Source": "SPSApps",
   "BasePath": "_content/SPSApps",
   "Mode": "Default",
@@ -119,6 +119,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\img\\cross.png",
+      "SourceId": "SPSApps",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "BasePath": "_content/SPSApps",
+      "RelativePath": "img/cross.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\cross.png"
+    },
+    {
       "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\img\\home.png",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
@@ -185,6 +202,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\profile.png"
+    },
+    {
+      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\img\\tick.png",
+      "SourceId": "SPSApps",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "BasePath": "_content/SPSApps",
+      "RelativePath": "img/tick.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\tick.png"
     },
     {
       "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\js\\site.js",

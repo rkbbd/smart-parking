@@ -1,8 +1,5 @@
 ﻿@model SPSApps.Models.Register.HomeDTO
-@{
-    // Layout = null;
-}
-<!-- Latest compiled and minified CSS -->
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <div style="width: 90%; margin: 20px auto">
     <div style="width: 100%; height: 100px">
@@ -15,8 +12,9 @@
             <h5>@Model.Email</h5>
         </div>
         <div style="float:right">
-
-            <a class="nav-link text-dark" asp-controller="Users" asp-action="LogOut">LogOut</a>
+            <button type="button" class="btn btn-default btn-sm">
+                <a class="glyphicon glyphicon-log-out" asp-controller="Users" asp-action="LogOut">&#160LogOut</a>
+            </button>
         </div>
     </div>
 
@@ -29,10 +27,11 @@
         </style>
 
         <div class="wrapper">
-            <div style="background-repeat:no-repeat;background-image: linear-gradient(to right, #FFFF, #7465E4);background-position:-25px -25px;background-size:  100% 350px; margin: 0 auto; height: 350px;">
-                <div style="width:86%; height:300px; margin: 0 auto;top: 10px" id="map"></div>
+            <div style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; background-position:-25px -25px; margin: 0 auto; height: 500px;">
+                <div style="width:95%; height:470px; margin: 0 auto;top: 10px" id="map"></div>
             </div>
-            <div id="parking" style="display:none">
+
+            <div id="parking" style="display:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; padding: 3px">
                 Apply for booking:
                 <br />
                 Rate/Hour: 
@@ -45,10 +44,8 @@
                 </h6>
 
                 <div class="input-box button" id="request-parking">
-                   @*  <a asp-controller="Users" asp-action="Register" asp-route-level="3">Request Parking</a> *@
                 </div>
                 <div class="input-box button" id="emergency-parking">
-                    @* <a asp-controller="Users" asp-action="Register" asp-route-emergency="3">Emergency Parking</a> *@
                 </div>
             </div>
             <!-- prettier-ignore -->
@@ -64,7 +61,7 @@
 
                     // const currentLocation = await getCurrentPosition();
                     map = new Map(document.getElementById("map"), {
-                        center: { lat: 23.81, lng: 90.42 },
+                        center: { lat: 23.8799, lng: 90.2727 },
                         zoom: 20,
                     });
 
@@ -99,8 +96,8 @@
 
                                 var requestParking = document.getElementById("request-parking");
                                 var emergencyParking = document.getElementById("emergency-parking");
-                                requestParking.innerHTML = `<a href="/Home/Confirm?emergency=${locations[i].id}">Emergency Parking</a>`
-                                emergencyParking.innerHTML = `<a href="/Home/Confirm?request=${locations[i+1].id}">Parking Request</a>`
+                                requestParking.innerHTML = `<button class="button-70"><a href="/Home/Confirm?emergency=${locations[i].id}">Emergency Parking</a></button>`
+                                emergencyParking.innerHTML = `<button class="button-71"><a href="/Home/Confirm?request=${locations[i].id}">Parking Request</a></button>`
                                 details.innerHTML = locations[i].fairPerParking
                             }
                         })(marker, i));
@@ -124,5 +121,59 @@
 </div>
 
 <link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
-@*
-<link rel="stylesheet" href="~/css/users.css" asp-append-version="true" /> *@
+
+<style>
+.button-70 {
+        display: inline-block;
+        outline: 0;
+        cursor: pointer;
+        padding: 5px 16px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        vertical-align: middle;
+        border: 1px solid;
+        border-radius: 6px;
+        color: black;
+        background-color: #fafbfc;
+        border-color: red;
+        box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset;
+        transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+        transition-property: color, background-color, border-color;
+    }
+
+ .button-70:hover {
+        color: #ffffff;
+        background-color: red;
+        border-color: #1b1f2326;
+        box-shadow: rgba(27, 31, 35, 0.1) 0px 1px 0px 0px, rgba(255, 255, 255, 0.03) 0px 1px 0px 0px inset;
+        transition-duration: 0.1s;
+ }
+
+    .button-71 {
+        display: inline-block;
+        outline: 0;
+        cursor: pointer;
+        padding: 5px 16px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        vertical-align: middle;
+        border: 1px solid;
+        border-radius: 6px;
+        color: black;
+        background-color: #fafbfc;
+        border-color: #0366d6;
+        box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset;
+        transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+        transition-property: color, background-color, border-color;
+    }
+
+        .button-71:hover {
+            color: #ffffff;
+            background-color: #0366d6;
+            border-color: #1b1f2326;
+            box-shadow: rgba(27, 31, 35, 0.1) 0px 1px 0px 0px, rgba(255, 255, 255, 0.03) 0px 1px 0px 0px inset;
+            transition-duration: 0.1s;
+        }
+</style>

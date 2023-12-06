@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using SPSApps.Migrations;
 using SPSApps.Models;
 using SPSApps.Models.Parking;
 using SPSApps.Models.Register;
@@ -57,11 +58,16 @@ namespace SPSApps.Controllers
             BuildingDTO home = new BuildingDTO("",0, 0, 0,0,name, email);
             if (email != null)
             {
+                var building = _context.Buildings.FirstOrDefault(f=>f.email == email);
+                if(building != null)
+                {
+                    return RedirectToAction("requestparking", "Home", new { login = true });
+                }
                 return View(home);
             }
             else
             {
-                //return View(new BuildingDTO("", 0,0 , 3, 50, "name", "email"));//TODO Remove
+               
                 return RedirectToAction("Login", "Users", new { login = true });
             }
         }
@@ -74,6 +80,7 @@ namespace SPSApps.Controllers
         public async Task<IActionResult> Create([Bind("Latitude,Longitude,TotalAvailableParking,FairPerParking")] Building building)
         {
             building.email = _session.GetString("email");
+            building.Status = 1;
             _context.Add(building);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index), "Home");
