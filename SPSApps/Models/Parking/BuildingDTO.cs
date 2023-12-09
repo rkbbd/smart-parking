@@ -3,6 +3,7 @@
     public record BuildingDTO
     (
         string Address,
+        string Info,
         decimal Latitude,
         decimal Longitude,
         int TotalAvailableParking,

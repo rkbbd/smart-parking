@@ -24,6 +24,26 @@
             .wrapper {
                 height: 100%;
             }
+
+            .all-browsers {
+                margin: 0;
+                padding: 5px;
+                background-color: lightgray;
+            }
+
+            .all-browsers > h1, .browser {
+                margin: 10px;
+                padding: 5px;
+            }
+
+            .browser {
+                background: white;
+            }
+
+                .browser > h2, p {
+                    margin: 4px;
+                    font-size: 90%;
+                }
         </style>
 
         <div class="wrapper">
@@ -31,23 +51,28 @@
                 <div style="width:95%; height:470px; margin: 0 auto;top: 10px" id="map"></div>
             </div>
 
-            <div id="parking" style="display:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; padding: 3px">
-                Apply for booking:
-                <br />
-                Rate/Hour: 
-                <div id="parking-details">
+            <article class="all-browsers" id="parking" style="margin-top: 30px;padding: 15px; display:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; padding: 3px">
+                <h3> Parking Info:</h3>
+                <article class="browser">
+                    <div >
+                        <br />
+                        Rate/Hour:
+                        <span id="parking-details">
+                        </span>
 
-                </div>
+                        <h6 id="info-locaion">
+                        </h6>
 
-                <h6>
-                    Welcome to Maplewood Village! Nestled in the heart of the picturesque Green Valley, Maplewood is a vibrant community known for its tree-lined streets, friendly neighbors, and charming local shops. Residents enjoy easy access to the nearby Green Valley Park, perfect for leisurely strolls and family picnics.
-                </h6>
+                        <span class="input-box button" id="request-parking">
+                        </span>
+                        <span class="input-box button" id="emergency-parking">
+                        </span>
+                    </div>
+                </article>
+            </article>
 
-                <div class="input-box button" id="request-parking">
-                </div>
-                <div class="input-box button" id="emergency-parking">
-                </div>
-            </div>
+
+            
             <!-- prettier-ignore -->
             <script>
                 (g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
@@ -89,16 +114,18 @@
                                // window.location.href = "/{controller}/{action}/{params}";
                                // infowindow.setContent("asdf");
                               //  infowindow.open(map, marker);
-                              debugger
+                              
                                 var details = document.getElementById("parking-details");
                                 var parking = document.getElementById("parking");
+                                var infoLocaion = document.getElementById("info-locaion");
                                 parking.style.display = 'block';
 
                                 var requestParking = document.getElementById("request-parking");
                                 var emergencyParking = document.getElementById("emergency-parking");
                                 requestParking.innerHTML = `<button class="button-70"><a href="/Home/Confirm?emergency=${locations[i].id}">Emergency Parking</a></button>`
                                 emergencyParking.innerHTML = `<button class="button-71"><a href="/Home/Confirm?request=${locations[i].id}">Parking Request</a></button>`
-                                details.innerHTML = locations[i].fairPerParking
+                                details.innerHTML = locations[i].fairPerParking;
+                                infoLocaion.innerHTML = locations[i].info;
                             }
                         })(marker, i));
                     }

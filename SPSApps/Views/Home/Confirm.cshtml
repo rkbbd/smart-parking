@@ -26,12 +26,51 @@
             .wrapper {
                 height: 100%;
             }
-        </style>
 
+            .all-browsers {
+                margin: 0;
+                padding: 5px;
+                background-color: lightgray;
+            }
+
+                .all-browsers > h1, .browser {
+                    margin: 10px;
+                    padding: 5px;
+                }
+
+            .browser {
+                background: white;
+            }
+
+                .browser > h2, p {
+                    margin: 4px;
+                    font-size: 90%;
+                }
+        </style>
         <div class="wrapper">
-            <div style="background-repeat:no-repeat;background-image: linear-gradient(to right, #FFFF, #7465E4);background-position:-25px -25px;background-size:  100% 350px; margin: 0 auto; height: 350px;">
-                <div style="width:86%; height:300px; margin: 0 auto;top: 10px" id="map"></div>
-            </div>
+        <article class="all-browsers" id="parking" style="margin-top: 30px;padding: 15px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; padding: 3px">
+            <h3> Are you sure?</h3>
+            <article class="browser">
+                <div>
+                    <br />
+                        <center> <h2> <b>Rate/Hour:</b> @Model.Buildings.FairPerParking</h2></center>
+                 
+                    <span class="input-box button" id="request-parking">
+                    </span>
+                    <span class="input-box button" id="emergency-parking">
+                    </span>
+                        <div class="input-box button" id="emergency-parking">
+                            <form asp-action="Confirm">
+                                <input Name="isEmergency" type="number" hidden id="some_property" value="@Model.isEmergency" />
+                                <input Name="id" id="some_property" hidden value="@Model.Buildings.Id" />
+                                <button style="width: 100%; align-content:center" type="submit">Confirm</button>
+                            </form>
+                        </div>
+                </div>
+            </article>
+        </article>
+        </div>
+      @*   <div class="wrapper">
             <div id="parking">
                 Apply for booking:
                 <br />
@@ -55,7 +94,7 @@
                 </div>
             </div>
 
-        </div>
+        </div> *@
     </div>
 
     <link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />

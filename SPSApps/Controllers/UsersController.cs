@@ -53,7 +53,7 @@ namespace SPSApps.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginDTO login)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(f => (f.Email == login.UserName || f.PhoneNumber == login.UserName) && f.Password == login.Password);
+            var user = await _context.Users.FirstOrDefaultAsync(f => (f.Email == login.UserName || f.PhoneNumber == login.UserName) && f.Password == login.Password && f.Status == 1);
             ViewBag.notFound = user == null;
             if (user == null)
             {
@@ -91,6 +91,7 @@ namespace SPSApps.Controllers
                 var existing = await _context.Users.FirstOrDefaultAsync(f => f.Email == user.Email || f.PhoneNumber == user.PhoneNumber);
                 if (existing == null)
                 {
+                    user.Status = 1;
                     _context.Add(user);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Login));

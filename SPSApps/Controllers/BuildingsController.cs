@@ -55,7 +55,7 @@ namespace SPSApps.Controllers
         {
             var email = _session.GetString("email");
             var name = _session.GetString("name");
-            BuildingDTO home = new BuildingDTO("",0, 0, 0,0,name, email);
+            BuildingDTO home = new BuildingDTO("", "",0, 0, 0,0,name, email);
             if (email != null)
             {
                 var building = _context.Buildings.FirstOrDefault(f=>f.email == email);
@@ -77,7 +77,7 @@ namespace SPSApps.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Latitude,Longitude,TotalAvailableParking,FairPerParking")] Building building)
+        public async Task<IActionResult> Create([Bind("Latitude,Longitude,TotalAvailableParking,FairPerParking, Info")] Building building)
         {
             building.email = _session.GetString("email");
             building.Status = 1;

@@ -23,7 +23,7 @@ namespace SPSApps.Controllers
         {
             var email =  _session.GetString("email");
             var name = _session.GetString("name");
-            var allLocation = _context.Buildings.ToList();
+            var allLocation = _context.Buildings.Where(f=>f.Status == 1).ToList();
             HomeDTO home = new HomeDTO( name, email, allLocation);
             if (email != null)
             {
@@ -42,7 +42,7 @@ namespace SPSApps.Controllers
 
             var databaseEntity = _context.RequestParkings.Include(r => r.Building).Where(f=>f.Building.email == email && f.IsActive == 0 && f.Status == 1);
             List<RequestParking> data = await databaseEntity.ToListAsync();
-            RequestParkingDTO parking = new RequestParkingDTO( data,  email,  name );
+            RequestParkingDTO parking = new RequestParkingDTO( data, name, email );
             return View(parking);
         }
 
@@ -84,17 +84,15 @@ namespace SPSApps.Controllers
         {
             var email = _session.GetString("email");
             var name = _session.GetString("name");
-            //string url = HttpContext.Request.QueryString.Value;
-            //String data = url.Split('?')[1].Split('=')[1];
-            var allLocation = _context.Buildings.FirstOrDefault(f=>(f.Id == emergency || f.Id == request));
+            var allLocation = _context.Buildings.FirstOrDefault(f=>(f.Id == emergency || f.Id == request) && f.Status == 1);
             ConfirmDTO home = new ConfirmDTO(name, email, allLocation, emergency >= 1 ? 1 : 0 );
-            if (email != null)
+            if (allLocation != null && email != null)
             {
                 return View(home);
             }
             else
             {
-                return RedirectToAction("Login", "Users", new { login = true });
+                return RedirectToAction("Index", "Home", new { login = true });
             }
         }
 

@@ -43,6 +43,10 @@ namespace SPSApps.Migrations
                     b.Property<decimal>("FairPerParking")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("Info")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<decimal>("Latitude")
                         .HasColumnType("decimal(18,2)");
 
