@@ -112,7 +112,7 @@ namespace SPSApps.Controllers
                 Fair = allLocation.FairPerParking,
                 RequestUserEmail = email,
                 Status = 1
-            });;
+            });
 
             _context.SaveChanges();
 

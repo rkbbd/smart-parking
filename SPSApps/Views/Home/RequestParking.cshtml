@@ -7,19 +7,19 @@
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <div style="width: 90%; margin: 20px auto">
-  @*   <div style="width: 100%; height: 100px">
+    @*   <div style="width: 100%; height: 100px">
 
-        <div style="float: left">
-            <img style="width:60px" class="profile-img" src="~/img/profile.png" />
-        </div>
-        <div style="margin-left: 18px; float: left">
-            <h5 style="font-weight:bold">@Model.Name</h5>
-            <h5>@Model.Email</h5>
-        </div>
-        <div style="float:right">
+    <div style="float: left">
+    <img style="width:60px" class="profile-img" src="~/img/profile.png" />
+    </div>
+    <div style="margin-left: 18px; float: left">
+    <h5 style="font-weight:bold">@Model.Name</h5>
+    <h5>@Model.Email</h5>
+    </div>
+    <div style="float:right">
 
-            <a class="nav-link text-dark" asp-controller="Users" asp-action="LogOut">LogOut</a>
-        </div>
+    <a class="nav-link text-dark" asp-controller="Users" asp-action="LogOut">LogOut</a>
+    </div>
     </div> *@
     <div style="width: 100%; height: 100px">
 
@@ -46,27 +46,77 @@
             .wrapper {
                 height: 100%;
             }
+
+
+
+
+
+            .container {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            table {
+                width: 800px;
+                border-collapse: collapse;
+                overflow: hidden;
+                box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            }
+
+            th,
+            td {
+                padding: 15px;
+                background-color: rgba(255,255,255,0.2);
+            }
+
+            th {
+                text-align: left;
+            }
+
+
+            tr{
+                background-color: rgba(255,255,255,0.3);
+            }
+
+            td {
+                position: relative; }
         </style>
 
         <div class="wrapper">
-            Parking Request
-            @foreach (var item in Model.RequestParkings.Select((value, i) => new { i, value }))
-            {
-                <div>
-                    Car <span>
-                        @(item.i + 1)
-                    </span>
+            <div class="container">
+                Parking Request
+                @if (Model.RequestParkings.ToList().Count > 0)
+                {
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.RequestParkings.Select((value, i) => new { i, value }))
+                            {
+                                <tr>
+                                    <td>
+                                        Car
+                                        @(item.i + 1)
+                                    </td>
+                                    <td>
+                                        <a asp-action="EditRequestParking" asp-route-id="@item.value.Id"><img width="20px" src="/img/tick.png" /></a>
 
-                    <a asp-action="EditRequestParking" asp-route-id="@item.value.Id"><img width="20px" src="/img/tick.png" /></a>
+                                        <a asp-action="CancelRequestParking" asp-route-id="@item.value.Id"><img width="20px" src="/img/cross.png" /></a>
+                                    </td>
 
-                    <a asp-action="CancelRequestParking" asp-route-id="@item.value.Id"><img width="20px" src="/img/cross.png" /></a>
-                </div>
+                                </tr>
+                            }
 
-
-
-
-
-            }
+                        </tbody>
+                    </table>
+                }
+            </div>
         </div>
     </div>
 
