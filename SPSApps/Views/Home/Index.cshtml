@@ -31,10 +31,10 @@
                 background-color: lightgray;
             }
 
-            .all-browsers > h1, .browser {
-                margin: 10px;
-                padding: 5px;
-            }
+                .all-browsers > h1, .browser {
+                    margin: 10px;
+                    padding: 5px;
+                }
 
             .browser {
                 background: white;
@@ -44,6 +44,33 @@
                     margin: 4px;
                     font-size: 90%;
                 }
+
+   
+            table {
+                width: 800px;
+                border-collapse: collapse;
+                overflow: hidden;
+                box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            }
+
+            th,
+            td {
+                padding: 15px;
+                background-color: rgba(255,255,255,0.2);
+            }
+
+            th {
+                text-align: left;
+            }
+
+
+            tr {
+                background-color: rgba(255,255,255,0.3);
+            }
+
+            td {
+                position: relative;
+            }
         </style>
 
         <div class="wrapper">
@@ -54,7 +81,7 @@
             <article class="all-browsers" id="parking" style="margin-top: 30px;padding: 15px; display:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; padding: 3px">
                 <h3> Parking Info:</h3>
                 <article class="browser">
-                    <div >
+                    <div>
                         <br />
                         Rate/Hour:
                         <span id="parking-details">
@@ -70,9 +97,48 @@
                     </div>
                 </article>
             </article>
+            @if (Model.ParkingRequests.ToList().Count > 0)
+            {
+                <article class="all-browsers" id="request-parking" style="margin-top: 30px;padding: 15px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; padding: 3px">
+                    <h3> Current Status:</h3>
+                    <article class="browser">
+                            <br />
+                            <div class="container">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Request Time</th>
+                                            <th>Duration</th>
+                                        <th>Cost/Hour</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model.ParkingRequests.Select((value, i) => new { i, value }))
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @item.value.AccessTime
+                                                </td>
+                                            <td>
+                                                @((DateTime.Now - item.value.AccessTime).Hours +" :"+ (DateTime.Now - item.value.AccessTime).Minutes)
+                                            </td>
+                                            <td>
+                                                @(item.value.Fair * ((DateTime.Now - item.value.AccessTime).Hours))
+                                            </td>
+                                                <td>
+                                                    <a asp-action="CompleteParking" asp-route-id="@item.value.Id">Leave</a>
+                                                </td>
 
+                                            </tr>
+                                        }
 
-            
+                                    </tbody>
+                                </table>
+                            </div>
+                    </article>
+                </article>
+            }
             <!-- prettier-ignore -->
             <script>
                 (g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
@@ -111,10 +177,10 @@
 
                         google.maps.event.addListener(marker, 'click', (function (marker, i) {
                             return function () {
-                               // window.location.href = "/{controller}/{action}/{params}";
-                               // infowindow.setContent("asdf");
-                              //  infowindow.open(map, marker);
-                              
+                                // window.location.href = "/{controller}/{action}/{params}";
+                                // infowindow.setContent("asdf");
+                                //  infowindow.open(map, marker);
+
                                 var details = document.getElementById("parking-details");
                                 var parking = document.getElementById("parking");
                                 var infoLocaion = document.getElementById("info-locaion");
@@ -132,14 +198,14 @@
 
                 }
 
-               // function getCurrentPosition() {
-               //      return new Promise((resolve, reject) => {
-               //          navigator.geolocation.getCurrentPosition(
-               //              position => resolve(position),
-               //              error => reject(error)
-               //          )
-               //      })
-               //  }
+                // function getCurrentPosition() {
+                //      return new Promise((resolve, reject) => {
+                //          navigator.geolocation.getCurrentPosition(
+                //              position => resolve(position),
+                //              error => reject(error)
+                //          )
+                //      })
+                //  }
 
                 initMap();
             </script>
@@ -150,7 +216,7 @@
 <link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
 
 <style>
-.button-70 {
+    .button-70 {
         display: inline-block;
         outline: 0;
         cursor: pointer;
@@ -169,13 +235,13 @@
         transition-property: color, background-color, border-color;
     }
 
- .button-70:hover {
-        color: #ffffff;
-        background-color: red;
-        border-color: #1b1f2326;
-        box-shadow: rgba(27, 31, 35, 0.1) 0px 1px 0px 0px, rgba(255, 255, 255, 0.03) 0px 1px 0px 0px inset;
-        transition-duration: 0.1s;
- }
+        .button-70:hover {
+            color: #ffffff;
+            background-color: red;
+            border-color: #1b1f2326;
+            box-shadow: rgba(27, 31, 35, 0.1) 0px 1px 0px 0px, rgba(255, 255, 255, 0.03) 0px 1px 0px 0px inset;
+            transition-duration: 0.1s;
+        }
 
     .button-71 {
         display: inline-block;

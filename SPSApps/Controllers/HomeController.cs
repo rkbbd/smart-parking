@@ -24,7 +24,8 @@ namespace SPSApps.Controllers
             var email =  _session.GetString("email");
             var name = _session.GetString("name");
             var allLocation = _context.Buildings.Where(f=>f.Status == 1).ToList();
-            HomeDTO home = new HomeDTO( name, email, allLocation);
+            var parkings = _context.RequestParkings.Where(f=>f.RequestUserEmail == email && f.IsPaid == false).ToList();
+            HomeDTO home = new HomeDTO( name, email, allLocation, parkings);
             if (email != null)
             {
                 return View(home);
@@ -61,6 +62,22 @@ namespace SPSApps.Controllers
             return RedirectToAction("RequestParking");
         }
 
+        public async Task<IActionResult> CompleteParking(int? id)
+        {
+            if (id == null || _context.Buildings == null)
+            {
+                return NotFound();
+            }
+
+            var building = await _context.RequestParkings.FindAsync(id);
+            building.IsPaid = true;
+            _context.Update(building);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+        
         public async Task<IActionResult> CancelRequestParking(int? id)
         {
             if (id == null || _context.Buildings == null)

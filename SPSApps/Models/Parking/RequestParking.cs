@@ -8,5 +8,6 @@
         public int IsActive { get; set; }
         public DateTime AccessTime { get; set; }
         public Building Building { get; set; }
+        public bool IsPaid { get; set; } = false;
     }
 }

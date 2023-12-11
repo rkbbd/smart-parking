@@ -94,6 +94,9 @@ namespace SPSApps.Migrations
                     b.Property<int>("IsActive")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsPaid")
+                        .HasColumnType("bit");
+
                     b.Property<string>("RequestUserEmail")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

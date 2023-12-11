@@ -93,6 +93,7 @@
                         <thead>
                             <tr>
                                 <th>No</th>
+                                <th>Time</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -103,6 +104,9 @@
                                     <td>
                                         Car
                                         @(item.i + 1)
+                                    </td>
+                                    <td>
+                                        @item.value.AccessTime
                                     </td>
                                     <td>
                                         <a asp-action="EditRequestParking" asp-route-id="@item.value.Id"><img width="20px" src="/img/tick.png" /></a>
