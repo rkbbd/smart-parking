@@ -59,7 +59,7 @@
             }
 
             table {
-                width: 800px;
+                width: 100%;
                 border-collapse: collapse;
                 overflow: hidden;
                 box-shadow: 0 0 20px rgba(0,0,0,0.1);
@@ -112,6 +112,43 @@
                                         <a asp-action="EditRequestParking" asp-route-id="@item.value.Id"><img width="20px" src="/img/tick.png" /></a>
 
                                         <a asp-action="CancelRequestParking" asp-route-id="@item.value.Id"><img width="20px" src="/img/cross.png" /></a>
+                                    </td>
+
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                }
+
+                <br />
+                Parking History
+                @if (Model.history.ToList().Count > 0)
+                {
+                    <table style="max-height: 30%">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Time</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.history.Select((value, i) => new { i, value }))
+                            {
+                                <tr>
+                                    <td>
+                                        Car
+                                        @(item.i + 1)
+                                    </td>
+                                    <td>
+                                        @item.value.AccessTime
+                                    </td>
+                                    <td>
+                                        @if (!item.value.IsPaid)
+                                        {
+                                            <a asp-controller="Home" asp-action="CompleteParking" asp-route-id="@item.value.Id"><img width="20px" src="/img/cross.png" /></a>
+                                        }
                                     </td>
 
                                 </tr>

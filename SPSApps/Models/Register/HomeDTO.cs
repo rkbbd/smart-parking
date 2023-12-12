@@ -9,6 +9,7 @@ namespace SPSApps.Models.Register
     public record RequestParkingDTO
     (
         List<RequestParking> RequestParkings,
+         List<RequestParking> history,
         string Name, string Email
 
     );

@@ -24,7 +24,7 @@ namespace SPSApps.Controllers
             var email =  _session.GetString("email");
             var name = _session.GetString("name");
             var allLocation = _context.Buildings.Where(f=>f.Status == 1).ToList();
-            var parkings = _context.RequestParkings.Where(f=>f.RequestUserEmail == email && f.IsPaid == false).ToList();
+            var parkings = _context.RequestParkings.Where(f=>f.RequestUserEmail == email && f.IsPaid == false).Take(3).ToList();
             HomeDTO home = new HomeDTO( name, email, allLocation, parkings);
             if (email != null)
             {
@@ -41,9 +41,10 @@ namespace SPSApps.Controllers
             var email = _session.GetString("email");
             var name = _session.GetString("name");
 
-            var databaseEntity = _context.RequestParkings.Include(r => r.Building).Where(f=>f.Building.email == email && f.IsActive == 0 && f.Status == 1);
+            var databaseEntity = _context.RequestParkings.Include(r => r.Building).Where(f=>f.Building.email == email && f.IsActive == 0 && f.Status == 1).Take(5);
+            List<RequestParking> reqHistory = _context.RequestParkings.Include(r => r.Building).Where(f => f.Building.email == email && f.IsActive == 1 && f.Status == 1).ToList();
             List<RequestParking> data = await databaseEntity.ToListAsync();
-            RequestParkingDTO parking = new RequestParkingDTO( data, name, email );
+            RequestParkingDTO parking = new RequestParkingDTO( data, reqHistory, name, email);
             return View(parking);
         }
 
