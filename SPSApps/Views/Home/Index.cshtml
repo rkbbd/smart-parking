@@ -18,7 +18,118 @@
         </div>
     </div>
 
+    <script type="module" >
+        function initAutocomplete() {
+            const map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: 23.8799, lng: 90.2727 },
+                zoom: 20,
+                mapTypeId: "roadmap",
+            });
 
+            //Parking place add
+            var locations = @Json.Serialize(Model.Buildings);
+
+            var infowindow = new google.maps.InfoWindow();
+
+            var marker, i;
+
+            for (i = 0; i < locations.length; i++) {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(locations[i].latitude, locations[i].longitude),
+                    icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/parking_lot_maps.png",
+                    map: map
+                });
+
+                google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                    return function () {
+                        // window.location.href = "/{controller}/{action}/{params}";
+                        // infowindow.setContent("asdf");
+                        //  infowindow.open(map, marker);
+
+                        var details = document.getElementById("parking-details");
+                        var currentStatus = document.getElementById("current-status");
+                        var parking = document.getElementById("parking");
+                        var infoLocaion = document.getElementById("info-locaion");
+                        parking.style.display = 'block';
+                        currentStatus.style.display = "none";
+
+                        var requestParking = document.getElementById("request-parking");
+                        var emergencyParking = document.getElementById("emergency-parking");
+                        requestParking.innerHTML = `<button class="button-70"><a href="/Home/Confirm?emergency=${locations[i].id}">Emergency Parking</a></button>`
+                        emergencyParking.innerHTML = `<button class="button-71"><a href="/Home/Confirm?request=${locations[i].id}">Parking Request</a></button>`
+                        details.innerHTML = locations[i].fairPerParking;
+                        infoLocaion.innerHTML = locations[i].info;
+                    }
+                })(marker, i));
+            }
+
+
+            // Create the search box and link it to the UI element.
+            const input = document.getElementById("pac-input");
+            const searchBox = new google.maps.places.SearchBox(input);
+
+            map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+            // Bias the SearchBox results towards current map's viewport.
+            map.addListener("bounds_changed", () => {
+                searchBox.setBounds(map.getBounds());
+            });
+
+            let markers = [];
+
+            // Listen for the event fired when the user selects a prediction and retrieve
+            // more details for that place.
+            searchBox.addListener("places_changed", () => {
+                const places = searchBox.getPlaces();
+
+                if (places.length == 0) {
+                    return;
+                }
+
+                // Clear out the old markers.
+                markers.forEach((marker) => {
+                    marker.setMap(null);
+                });
+                markers = [];
+
+                // For each place, get the icon, name and location.
+                const bounds = new google.maps.LatLngBounds();
+
+                places.forEach((place) => {
+                    if (!place.geometry || !place.geometry.location) {
+                        console.log("Returned place contains no geometry");
+                        return;
+                    }
+
+                    const icon = {
+                        url: place.icon,
+                        size: new google.maps.Size(71, 71),
+                        origin: new google.maps.Point(0, 0),
+                        anchor: new google.maps.Point(17, 34),
+                        scaledSize: new google.maps.Size(25, 25),
+                    };
+
+                    // Create a marker for each place.
+                    markers.push(
+                        new google.maps.Marker({
+                            map,
+                            icon,
+                            title: place.name,
+                            position: place.geometry.location,
+                        }),
+                    );
+                    if (place.geometry.viewport) {
+                        // Only geocodes have viewport.
+                        bounds.union(place.geometry.viewport);
+                    } else {
+                        bounds.extend(place.geometry.location);
+                    }
+                });
+                map.fitBounds(bounds);
+            });
+        }
+
+        window.initAutocomplete = initAutocomplete;
+    </script>
     <div style="float:none;">
         <style>
            
@@ -68,10 +179,89 @@
             td {
                 position: relative;
             }
+
+            /* search */
+            #description {
+                font-family: Roboto;
+                font-size: 15px;
+                font-weight: 300;
+            }
+
+            #infowindow-content .title {
+                font-weight: bold;
+            }
+
+            #infowindow-content {
+                display: none;
+            }
+
+            #map #infowindow-content {
+                display: inline;
+            }
+
+            .pac-card {
+                background-color: #fff;
+                border: 0;
+                border-radius: 2px;
+                box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+                margin: 10px;
+                padding: 0 0.5em;
+                font: 400 18px Roboto, Arial, sans-serif;
+                overflow: hidden;
+                font-family: Roboto;
+                padding: 0;
+            }
+
+            #pac-container {
+                padding-bottom: 12px;
+                margin-right: 12px;
+            }
+
+            .pac-controls {
+                display: inline-block;
+                padding: 5px 11px;
+            }
+
+                .pac-controls label {
+                    font-family: Roboto;
+                    font-size: 13px;
+                    font-weight: 300;
+                }
+
+            #pac-input {
+                background-color: #fff;
+                font-family: Roboto;
+                font-size: 15px;
+                font-weight: 300;
+                margin-left: 12px;
+                padding: 0 11px 0 13px;
+                text-overflow: ellipsis;
+                width: 400px;
+            }
+
+                #pac-input:focus {
+                    border-color: #4d90fe;
+                }
+
+            #title {
+                color: #fff;
+                background-color: #4d90fe;
+                font-size: 25px;
+                font-weight: 500;
+                padding: 6px 12px;
+            }
+
+            #target {
+                width: 345px;
+            }
         </style>
 
         <div>
             <div style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; background-position:-25px -25px; margin: 0 auto; height: 500px;">
+                <input id="pac-input"
+                       class="controls"
+                       type="text"
+                       placeholder="Search Box" />
                 <div style="width:95%; height:470px; margin: 0 auto;top: 10px" id="map"></div>
             </div>
 
@@ -96,7 +286,7 @@
             </article>
             @if (Model.ParkingRequests.ToList().Count > 0)
             {
-                <article class="all-browsers" id="request-parking" style="margin-top: 30px;padding: 15px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; padding: 3px">
+                <article class="all-browsers" id="current-status" style="margin-top: 30px;padding: 15px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; padding: 3px">
                     <h3> Current Status:</h3>
                     <article class="browser">
                             <br />
@@ -137,63 +327,71 @@
                 </article>
             }
             <!-- prettier-ignore -->
-            <script>
+    @*         <script>
                 (g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
-                    ({ key: "AIzaSyDYW_g6zWahp8GXuGARpDp7MiMZih6VdU8", v: "weekly" });</script>
+                    ({ key: "AIzaSyDYW_g6zWahp8GXuGARpDp7MiMZih6VdU8", v: "weekly" });</script> *@
             <script>
-                let map;
+                // let map;
 
-                async function initMap() {
+                // async function initMap() {
 
-                    const { Map } = await google.maps.importLibrary("maps");
+                //     const { Map } = await google.maps.importLibrary("maps");
 
-                    // const currentLocation = await getCurrentPosition();
-                    map = new Map(document.getElementById("map"), {
-                        center: { lat: 23.8799, lng: 90.2727 },
-                        zoom: 20,
-                    });
+                //     // const currentLocation = await getCurrentPosition();
+                //     map = new Map(document.getElementById("map"), {
+                //         center: { lat: 23.8799, lng: 90.2727 },
+                //         zoom: 20,
+                //     });
 
-                    // marker = new google.maps.Marker({
-                    //     position: new google.maps.LatLng(currentLocation.coords.latitude, currentLocation.coords.longitude),
-                    //     label: "You",
-                    //     map: map
-                    // });
-                    var locations = @Json.Serialize(Model.Buildings);
+                //     const input = document.getElementById("pac-input");
+                //     const searchBox = new google.maps.places.SearchBox(input);
 
-                    var infowindow = new google.maps.InfoWindow();
+                //     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+                //     // Bias the SearchBox results towards current map's viewport.
+                //     map.addListener("bounds_changed", () => {
+                //         searchBox.setBounds(map.getBounds());
+                //     });
+                //     // marker = new google.maps.Marker({
+                //     //     position: new google.maps.LatLng(currentLocation.coords.latitude, currentLocation.coords.longitude),
+                //     //     label: "You",
+                //     //     map: map
+                //     // });
+                //     var locations = @Json.Serialize(Model.Buildings);
 
-                    var marker, i;
+                //     var infowindow = new google.maps.InfoWindow();
 
-                    console.log(locations)
-                    for (i = 0; i < locations.length; i++) {
-                        marker = new google.maps.Marker({
-                            position: new google.maps.LatLng(locations[i].latitude, locations[i].longitude),
-                            icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/parking_lot_maps.png",
-                            map: map
-                        });
+                //     var marker, i;
 
-                        google.maps.event.addListener(marker, 'click', (function (marker, i) {
-                            return function () {
-                                // window.location.href = "/{controller}/{action}/{params}";
-                                // infowindow.setContent("asdf");
-                                //  infowindow.open(map, marker);
+                //     console.log(locations)
+                //     for (i = 0; i < locations.length; i++) {
+                //         marker = new google.maps.Marker({
+                //             position: new google.maps.LatLng(locations[i].latitude, locations[i].longitude),
+                //             icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/parking_lot_maps.png",
+                //             map: map
+                //         });
 
-                                var details = document.getElementById("parking-details");
-                                var parking = document.getElementById("parking");
-                                var infoLocaion = document.getElementById("info-locaion");
-                                parking.style.display = 'block';
+                //         google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                //             return function () {
+                //                 // window.location.href = "/{controller}/{action}/{params}";
+                //                 // infowindow.setContent("asdf");
+                //                 //  infowindow.open(map, marker);
 
-                                var requestParking = document.getElementById("request-parking");
-                                var emergencyParking = document.getElementById("emergency-parking");
-                                requestParking.innerHTML = `<button class="button-70"><a href="/Home/Confirm?emergency=${locations[i].id}">Emergency Parking</a></button>`
-                                emergencyParking.innerHTML = `<button class="button-71"><a href="/Home/Confirm?request=${locations[i].id}">Parking Request</a></button>`
-                                details.innerHTML = locations[i].fairPerParking;
-                                infoLocaion.innerHTML = locations[i].info;
-                            }
-                        })(marker, i));
-                    }
+                //                 var details = document.getElementById("parking-details");
+                //                 var parking = document.getElementById("parking");
+                //                 var infoLocaion = document.getElementById("info-locaion");
+                //                 parking.style.display = 'block';
 
-                }
+                //                 var requestParking = document.getElementById("request-parking");
+                //                 var emergencyParking = document.getElementById("emergency-parking");
+                //                 requestParking.innerHTML = `<button class="button-70"><a href="/Home/Confirm?emergency=${locations[i].id}">Emergency Parking</a></button>`
+                //                 emergencyParking.innerHTML = `<button class="button-71"><a href="/Home/Confirm?request=${locations[i].id}">Parking Request</a></button>`
+                //                 details.innerHTML = locations[i].fairPerParking;
+                //                 infoLocaion.innerHTML = locations[i].info;
+                //             }
+                //         })(marker, i));
+                //     }
+
+                // }
 
                 // function getCurrentPosition() {
                 //      return new Promise((resolve, reject) => {
@@ -204,8 +402,10 @@
                 //      })
                 //  }
 
-                initMap();
+               // initMap();
             </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYW_g6zWahp8GXuGARpDp7MiMZih6VdU8&callback=initAutocomplete&libraries=places&v=weekly"
+                    defer></script>
         </div>
     </div>
 </div>
