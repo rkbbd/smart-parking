@@ -50,42 +50,42 @@ namespace SPSApps.Controllers
             return View(building);
         }
 
-        // GET: Buildings/Create
-        public IActionResult Create()
-        {
-            var email = _session.GetString("email");
-            var name = _session.GetString("name");
-            BuildingDTO home = new BuildingDTO("", "",0, 0, 0,0,name, email);
-            if (email != null)
-            {
-                var building = _context.Buildings.FirstOrDefault(f=>f.email == email);
-                if(building != null)
-                {
-                    return RedirectToAction("requestparking", "Home", new { login = true });
-                }
-                return View(home);
-            }
-            else
-            {
+        //// GET: Buildings/Create
+        //public IActionResult Create()
+        //{
+        //    var email = _session.GetString("email");
+        //    var name = _session.GetString("name");
+        //    BuildingDTO home = new BuildingDTO("", "",0, 0, 0,0,name, email);
+        //    if (email != null)
+        //    {
+        //        var building = _context.Buildings.FirstOrDefault(f=>f.email == email);
+        //        if(building != null)
+        //        {
+        //            return RedirectToAction("requestparking", "Home", new { login = true });
+        //        }
+        //        return View(home);
+        //    }
+        //    else
+        //    {
                
-                return RedirectToAction("Login", "Users", new { login = true });
-            }
-        }
+        //        return RedirectToAction("Login", "Users", new { login = true });
+        //    }
+        //}
 
-        // POST: Buildings/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Latitude,Longitude,TotalAvailableParking,FairPerParking, Info")] Building building)
-        {
-            building.email = _session.GetString("email");
-            building.Status = 1;
-            _context.Add(building);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index), "Home");
+        //// POST: Buildings/Create
+        //// To protect from overposting attacks, enable the specific properties you want to bind to.
+        //// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Create([Bind("Latitude,Longitude,TotalAvailableParking,FairPerParking, Info")] Building building)
+        //{
+        //    building.email = _session.GetString("email");
+        //    building.Status = 1;
+        //    _context.Add(building);
+        //    await _context.SaveChangesAsync();
+        //    return RedirectToAction(nameof(Index), "Home");
 
-        }
+        //}
 
         // GET: Buildings/Edit/5
         public async Task<IActionResult> Edit(int? id)

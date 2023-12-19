@@ -7,8 +7,6 @@
         decimal Latitude,
         decimal Longitude,
         int TotalAvailableParking,
-        decimal FairPerParking,
-        string Name,
-        string Email
+        decimal FairPerParking
     );
 }

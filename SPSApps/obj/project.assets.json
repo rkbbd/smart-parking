@@ -11434,11 +11434,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\SPSApps.csproj",
+      "projectUniqueName": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\SPSApps.csproj",
       "projectName": "SPSApps",
-      "projectPath": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\SPSApps.csproj",
+      "projectPath": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\SPSApps.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\obj\\",
+      "outputPath": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

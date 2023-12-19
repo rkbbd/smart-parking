@@ -1,0 +1,130 @@
+﻿@model SPSApps.Models.Register.RequestParkingDTO
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="wrapper">
+    <div class="container">
+        @if (Model.RequestParkings.ToList().Count > 0)
+        {
+            <span>Parking Request</span>
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Time</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.RequestParkings.Select((value, i) => new { i, value }))
+                    {
+                        <tr>
+                            <td>
+                                Car
+                                @(item.i + 1)
+                            </td>
+                            <td>
+                                @item.value.AccessTime
+                            </td>
+                            <td>
+                                <a asp-action="EditRequestParking" asp-route-id="@item.value.Id"><img width="20px" src="/img/tick.png" /></a>
+
+                                <a asp-action="CancelRequestParking" asp-route-id="@item.value.Id"><img width="20px" src="/img/cross.png" /></a>
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        }
+        <br />
+       
+        @if (Model.history.ToList().Count > 0)
+        {
+            <span> Parking History</span>
+            <table style="max-height: 30%">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Time</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.history.Select((value, i) => new { i, value }))
+                    {
+                        <tr>
+                            <td>
+                                Car
+                                @(item.i + 1)
+                            </td>
+                            <td>
+                                @item.value.AccessTime
+                            </td>
+                            <td>
+                                @if (!item.value.IsPaid)
+                                {
+                                    <a asp-controller="Home" asp-action="CompleteParking" asp-route-id="@item.value.Id"><img width="20px" src="/img/cross.png" /></a>
+                                }
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        }
+        @if (Model.history.ToList().Count == 0)
+        {
+            <center style="width: 100%">No request found</center>
+
+            <br />  <br />
+            <center style="width: 100%"> <a asp-controller="Home" asp-action="OwnerDashboard">Refresh</a></center>
+
+          
+           
+        }
+    </div>
+</div>
+
+<style>
+    .wrapper {
+        height: 100%;
+    }
+
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    th,
+    td {
+        padding: 15px;
+        background-color: rgba(255,255,255,0.2);
+    }
+
+    th {
+        text-align: left;
+    }
+
+
+    tr {
+        background-color: rgba(255,255,255,0.3);
+    }
+
+    td {
+        position: relative;
+    }
+</style>

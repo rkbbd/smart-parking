@@ -9,137 +9,137 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SPSApps
 build_property.RootNamespace = SPSApps
-build_property.ProjectDir = D:\Project\DotNet\smart-parking\SPSApps\
+build_property.ProjectDir = E:\Project\Dot Net\smart-parking\SPSApps\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Project\DotNet\smart-parking\SPSApps
+build_property.MSBuildProjectDirectory = E:\Project\Dot Net\smart-parking\SPSApps
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Pages01/Error.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Pages01/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMwMVxFcnJvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Pages01/Index.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Pages01/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMwMVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Pages01/Privacy.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Pages01/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMwMVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Pages01/Shared/_ValidationScriptsPartial.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Pages01/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMwMVxTaGFyZWRcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Pages01/_ViewImports.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Pages01/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMwMVxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Pages01/_ViewStart.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Pages01/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMwMVxfVmlld1N0YXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Views/Buildings/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVpbGRpbmdzXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Project/DotNet/smart-parking/SPSApps/Views/Buildings/Delete.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Views/Buildings/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVpbGRpbmdzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Views/Buildings/Details.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Views/Buildings/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVpbGRpbmdzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Views/Buildings/Edit.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Views/Buildings/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVpbGRpbmdzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Views/Buildings/Index.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Views/Buildings/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVpbGRpbmdzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Views/Home/Confirm.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Views/Home/AddBuilding.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGRCdWlsZGluZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project/Dot Net/smart-parking/SPSApps/Views/Home/Confirm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb25maXJtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Views/Home/Index.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Views/Home/RequestParking.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZXF1ZXN0UGFya2luZy5jc2h0bWw=
+[E:/Project/Dot Net/smart-parking/SPSApps/Views/Home/OwnerDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPd25lckRhc2hib2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Views/RequestParkings/Create.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Views/RequestParkings/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFBhcmtpbmdzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Views/RequestParkings/Delete.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Views/RequestParkings/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFBhcmtpbmdzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Views/RequestParkings/Details.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Views/RequestParkings/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFBhcmtpbmdzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Views/RequestParkings/Edit.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Views/RequestParkings/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFBhcmtpbmdzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Views/RequestParkings/Index.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Views/RequestParkings/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFBhcmtpbmdzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Views/Shared/Error.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Views/Shared/_ValidationScriptsPartial.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Views/Users/Delete.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Views/Users/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Views/Users/Details.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Views/Users/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Views/Users/Edit.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Views/Users/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Views/Users/Index.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Views/Users/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Views/Users/Login.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Views/Users/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Views/Users/Register.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Views/Users/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcUmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Views/_ViewImports.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Views/_ViewStart.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project/DotNet/smart-parking/SPSApps/Pages01/Shared/_Layout.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Pages01/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMwMVxTaGFyZWRcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-xuidcg464o
 
-[D:/Project/DotNet/smart-parking/SPSApps/Views/Shared/_Layout - Copy.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Views/Shared/_Layout - Copy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQgLSBDb3B5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-98iy9zy34d
 
-[D:/Project/DotNet/smart-parking/SPSApps/Views/Shared/_Layout.cshtml]
+[E:/Project/Dot Net/smart-parking/SPSApps/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-4df3c3up5a

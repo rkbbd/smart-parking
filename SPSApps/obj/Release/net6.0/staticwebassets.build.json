@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "a6kD9+jD0E37d6RLRvQJuNJnD/Yh35wWOWobQjjHx+I=",
+  "Hash": "0qC0UT2hjSFCr3Gn4ZuXItYvsCn/rzW6O3ODTEgAgAg=",
   "Source": "SPSApps",
   "BasePath": "_content/SPSApps",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "SPSApps\\wwwroot",
       "Source": "SPSApps",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\obj\\Release\\net6.0\\scopedcss\\bundle\\SPSApps.styles.css",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\obj\\Release\\net6.0\\scopedcss\\bundle\\SPSApps.styles.css",
       "SourceId": "SPSApps",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\obj\\Release\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\obj\\Release\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "SPSApps.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\obj\\Release\\net6.0\\scopedcss\\bundle\\SPSApps.styles.css"
+      "OriginalItemSpec": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\obj\\Release\\net6.0\\scopedcss\\bundle\\SPSApps.styles.css"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\SPSApps.bundle.scp.css",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\SPSApps.bundle.scp.css",
       "SourceId": "SPSApps",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "SPSApps.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,30 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\SPSApps.bundle.scp.css"
+      "OriginalItemSpec": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\SPSApps.bundle.scp.css"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\css\\home.css",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\css\\bootstrap.css",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
+      "BasePath": "_content/SPSApps",
+      "RelativePath": "css/bootstrap.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\bootstrap.css"
+    },
+    {
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\css\\home.css",
+      "SourceId": "SPSApps",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "css/home.css",
       "AssetKind": "All",
@@ -68,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\css\\home.css"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\css\\site.css",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\css\\site.css",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -85,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\css\\users.css",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\css\\users.css",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "css/users.css",
       "AssetKind": "All",
@@ -102,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\css\\users.css"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\favicon.ico",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\favicon.ico",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -119,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\img\\cross.png",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\img\\cross.png",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "img/cross.png",
       "AssetKind": "All",
@@ -136,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\img\\cross.png"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\img\\home.png",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\img\\home.png",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "img/home.png",
       "AssetKind": "All",
@@ -153,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\img\\home.png"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\img\\map.png",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\img\\map.png",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "img/map.png",
       "AssetKind": "All",
@@ -170,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\img\\map.png"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\img\\praking.png",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\img\\praking.png",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "img/praking.png",
       "AssetKind": "All",
@@ -187,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\img\\praking.png"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\img\\profile.png",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\img\\profile.png",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "img/profile.png",
       "AssetKind": "All",
@@ -204,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\img\\profile.png"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\img\\tick.png",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\img\\tick.png",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "img/tick.png",
       "AssetKind": "All",
@@ -221,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\img\\tick.png"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\js\\site.js",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\js\\site.js",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -238,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -255,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -272,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -289,10 +306,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -306,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -323,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -340,10 +357,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -357,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -374,10 +391,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -391,10 +408,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -408,10 +425,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -425,10 +442,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -442,10 +459,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -459,10 +476,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -476,10 +493,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -493,10 +510,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -510,10 +527,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -527,10 +544,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -544,10 +561,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -561,10 +578,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -578,10 +595,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -595,10 +612,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -612,10 +629,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -629,10 +646,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -646,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -663,10 +680,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -680,10 +697,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -697,10 +714,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -714,10 +731,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -731,10 +748,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -748,10 +765,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -765,10 +782,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -782,10 +799,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -799,10 +816,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -816,10 +833,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -833,10 +850,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -850,10 +867,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -867,10 +884,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -884,10 +901,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -901,10 +918,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -918,10 +935,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -935,10 +952,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -952,10 +969,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -969,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -986,10 +1003,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -1003,10 +1020,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -1020,10 +1037,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -1037,10 +1054,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -1054,10 +1071,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -1071,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -1088,10 +1105,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -1105,10 +1122,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -1122,10 +1139,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -1139,10 +1156,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -1156,10 +1173,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1173,10 +1190,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1190,10 +1207,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "SPSApps",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\DotNet\\smart-parking\\SPSApps\\wwwroot\\",
+      "ContentRoot": "E:\\Project\\Dot Net\\smart-parking\\SPSApps\\wwwroot\\",
       "BasePath": "_content/SPSApps",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",

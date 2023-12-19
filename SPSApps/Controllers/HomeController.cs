@@ -21,32 +21,65 @@ namespace SPSApps.Controllers
 
         public IActionResult Index()
         {
-            var email =  _session.GetString("email");
-            var name = _session.GetString("name");
-            var allLocation = _context.Buildings.Where(f=>f.Status == 1).ToList();
-            var parkings = _context.RequestParkings.Where(f=>f.RequestUserEmail == email && f.IsPaid == false).Take(3).ToList();
-            HomeDTO home = new HomeDTO( name, email, allLocation, parkings);
-            if (email != null)
-            {
-                return View(home);
-            }
-            else
+            var email = _session.GetString("email");
+
+            var allLocation = _context.Buildings.Where(f => f.Status == 1).ToList();//For map marking
+            var parkings = _context.RequestParkings.Where(f => f.RequestUserEmail == email && f.IsPaid == false).Take(3).ToList(); //show max 3 
+
+            if (email == null)
             {
                 return RedirectToAction("Login", "Users", new { login = true });
             }
+            return View(new HomeDTO(email, allLocation, parkings));
         }
 
-        public async Task<IActionResult> RequestParking()
+
+        // GET: Buildings/Create
+        public IActionResult AddBuilding()
         {
             var email = _session.GetString("email");
-            var name = _session.GetString("name");
-
-            var databaseEntity = _context.RequestParkings.Include(r => r.Building).Where(f=>f.Building.email == email && f.IsActive == 0 && f.Status == 1).Take(5);
-            List<RequestParking> reqHistory = _context.RequestParkings.Include(r => r.Building).Where(f => f.Building.email == email && f.IsActive == 1 && f.Status == 1).ToList();
-            List<RequestParking> data = await databaseEntity.ToListAsync();
-            RequestParkingDTO parking = new RequestParkingDTO( data, reqHistory, name, email);
-            return View(parking);
+            if (email == null)
+            {
+                return RedirectToAction("Login", "Users", new { login = true });
+            }
+            var building = _context.Buildings.FirstOrDefault(f => f.email == email && f.Status == 1);
+            if (building != null)
+            {
+                return RedirectToAction("OwnerDashboard", "Home", new { login = true });
+            }
+            return View(new BuildingDTO("", "", 0, 0, 0, 0));
         }
+
+        // POST: Buildings/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddBuilding([Bind("Latitude,Longitude,TotalAvailableParking,FairPerParking, Info")] Building building)
+        {
+            building.email = _session.GetString("email");
+            building.Status = 1;
+            _context.Add(building);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index), "Home");
+        }
+
+
+        public async Task<IActionResult> OwnerDashboard()
+        {
+            var email = _session.GetString("email");
+
+            var databaseEntity = _context.RequestParkings.Include(r => r.Building).Where(f => f.Building.email == email && f.IsActive == 0 && f.Status == 1).Take(5);
+
+            List<RequestParking> reqHistory = _context.RequestParkings.Include(r => r.Building).Where(f => f.Building.email == email && f.IsActive == 1 && f.Status == 1).ToList();
+
+            List<RequestParking> data = await databaseEntity.ToListAsync();
+
+            return View(new RequestParkingDTO(data, reqHistory));
+        }
+
+
+
 
         public async Task<IActionResult> EditRequestParking(int? id)
         {
@@ -78,7 +111,7 @@ namespace SPSApps.Controllers
             return RedirectToAction("Index");
         }
 
-        
+
         public async Task<IActionResult> CancelRequestParking(int? id)
         {
             if (id == null || _context.Buildings == null)
@@ -101,25 +134,19 @@ namespace SPSApps.Controllers
         public IActionResult Confirm(int emergency, int request)
         {
             var email = _session.GetString("email");
-            var name = _session.GetString("name");
-            var allLocation = _context.Buildings.FirstOrDefault(f=>(f.Id == emergency || f.Id == request) && f.Status == 1);
-            ConfirmDTO home = new ConfirmDTO(name, email, allLocation, emergency >= 1 ? 1 : 0 );
-            if (allLocation != null && email != null)
-            {
-                return View(home);
-            }
-            else
+            var requestLocation = _context.Buildings.FirstOrDefault(f => (f.Id == emergency || f.Id == request) && f.Status == 1);
+
+            if (requestLocation == null || email == null)
             {
                 return RedirectToAction("Index", "Home", new { login = true });
             }
+            return View(new ConfirmDTO(email, requestLocation, emergency >= 1 ? 1 : 0));
         }
 
         [HttpPost]
-        public IActionResult Confirm([Bind("Id, IsEmergency")] ParkingRequest parkingRequest )
+        public IActionResult Confirm([Bind("Id, IsEmergency")] ParkingRequest parkingRequest)
         {
-           
             var email = _session.GetString("email");
-            var name = _session.GetString("name");
             var allLocation = _context.Buildings.FirstOrDefault(f => f.Id == parkingRequest.Id);
 
             _context.RequestParkings.Add(new RequestParking()

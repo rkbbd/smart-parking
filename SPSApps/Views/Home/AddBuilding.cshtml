@@ -1,0 +1,80 @@
+﻿@model SPSApps.Models.Parking.BuildingDTO
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<form asp-action="Create" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; padding: 30px ">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <lebel>Available space/car</lebel>
+        <input asp-for="TotalAvailableParking" class="form-control" placeholder="Enter total parking space/car" required />
+        <span asp-validation-for="TotalAvailableParking" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <lebel>Parking Charge/Hour</lebel>
+        <input asp-for="FairPerParking" type="number" class="form-control" placeholder="Enter parking charge" required />
+        <span asp-validation-for="FairPerParking" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <lebel>Other Info</lebel>
+        <textarea asp-for="Info" type="text" class="form-control" placeholder="Enter Location Info"></textarea>
+        <span asp-validation-for="Info" class="text-danger"></span>
+    </div>
+    @Html.HiddenFor(model => model.Latitude)
+    @Html.HiddenFor(model => model.Longitude)
+
+    <div style="float:none;">
+        <style>
+            .wrapper {
+                height: 100%;
+            }
+        </style>
+
+        <div class="wrapper" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; padding: 30px ">
+
+            <div style="height:460px; margin: 0 auto;top: 10px" id="map"></div>
+
+            <!-- prettier-ignore -->
+            <script>
+                (g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
+                    ({ key: "AIzaSyDYW_g6zWahp8GXuGARpDp7MiMZih6VdU8", v: "weekly" });</script>
+            <script>
+                let map;
+
+                async function initMap() {
+                    const { Map } = await google.maps.importLibrary("maps");
+
+                    map = new Map(document.getElementById("map"), {
+                        center: { lat: 23.8799, lng: 90.2727 },
+                        zoom: 20,
+                    });
+                    await google.maps.event.addListener(map, 'click', function (event) {
+                        console.log(event);
+                        placeMarker(event.latLng);
+                    });
+
+                }
+
+                initMap();
+
+
+                function placeMarker(location) {
+                    const latLang = location.toJSON();
+                    document.getElementById('Latitude').value = latLang.lat;
+                    document.getElementById('Longitude').value = latLang.lng;
+                    console.log(latLang.lat);
+                    var marker = new google.maps.Marker({
+                        position: location,
+                        map: map
+                    });
+                }
+            </script>
+        </div>
+    </div>
+
+    <div style="width: 100%; margin-top: 15px;" class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
