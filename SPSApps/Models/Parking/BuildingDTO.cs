@@ -7,6 +7,7 @@
         decimal Latitude,
         decimal Longitude,
         int TotalAvailableParking,
-        decimal FairPerParking
+        decimal FairPerParking,
+        decimal EmergencyFairPerParking
     );
 }

@@ -1,10 +1,10 @@
 ﻿@model SPSApps.Models.Parking.BuildingDTO
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Add Building";
 }
 
-<form asp-action="Create" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; padding: 30px ">
+<form asp-action="AddBuilding" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; padding: 30px ">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
     <div class="form-group">
@@ -16,6 +16,11 @@
         <lebel>Parking Charge/Hour</lebel>
         <input asp-for="FairPerParking" type="number" class="form-control" placeholder="Enter parking charge" required />
         <span asp-validation-for="FairPerParking" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <lebel>Emergency Charge/Hour</lebel>
+        <input asp-for="EmergencyFairPerParking" type="number" class="form-control" placeholder="Enter parking charge" required />
+        <span asp-validation-for="EmergencyFairPerParking" class="text-danger"></span>
     </div>
     <div class="form-group">
         <lebel>Other Info</lebel>

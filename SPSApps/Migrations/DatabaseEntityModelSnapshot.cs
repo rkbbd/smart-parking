@@ -40,6 +40,9 @@ namespace SPSApps.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<decimal>("EmergencyFairPerParking")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<decimal>("FairPerParking")
                         .HasColumnType("decimal(18,2)");
 
@@ -47,11 +50,14 @@ namespace SPSApps.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Latitude")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<bool>("IsEmergencyAvailable")
+                        .HasColumnType("bit");
 
-                    b.Property<decimal>("Longitude")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double>("Latitude")
+                        .HasColumnType("float");
+
+                    b.Property<double>("Longitude")
+                        .HasColumnType("float");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");

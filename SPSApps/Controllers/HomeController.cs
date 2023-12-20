@@ -47,7 +47,7 @@ namespace SPSApps.Controllers
             {
                 return RedirectToAction("OwnerDashboard", "Home", new { login = true });
             }
-            return View(new BuildingDTO("", "", 0, 0, 0, 0));
+            return View(new BuildingDTO("", "", 0, 0, 0, 0, 0));
         }
 
         // POST: Buildings/Create
