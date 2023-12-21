@@ -7,17 +7,31 @@
         <article class="browser">
             <div>
                 <br />
-                <center> <h2> <b>Rate/Hour:</b> @Model.Buildings.FairPerParking</h2></center>
+                <center>
+                    <h2>
+                        <b>Rate/Hour:</b>
+                        @if (Model.isEmergency == 1)
+                        {
+                            <span style="color:red">@Model.Buildings.EmergencyFairPerParking</span>
+                        }
+                        else
+                        {
+                            @Model.Buildings.FairPerParking
+                        }
+                    </h2>
+                </center>
 
-                <span class="input-box button" id="request-parking">
-                </span>
-                <span class="input-box button" id="emergency-parking">
-                </span>
                 <div class="input-box button" id="emergency-parking">
                     <form asp-action="Confirm">
-                        <input Name="isEmergency" type="number" hidden id="some_property" value="@Model.isEmergency" />
-                        <input Name="id" id="some_property" hidden value="@Model.Buildings.Id" />
-                        <button style="width: 100%; align-content:center" type="submit">Confirm</button>
+                        <center>
+                            <input Name="isEmergency" type="number" hidden id="some_property" value="@Model.isEmergency" />
+                            <div class="form-group" style="width: 300px; align-items:center">
+                                <lebel>How long do you use the parking?/hour</lebel>
+                                <input Name="Hour" class="form-control" type="number" min="1" value="1" placeholder="How long do you use the parking?" />
+                            </div>
+                            <input Name="id" id="some_property" hidden value="@Model.Buildings.Id" />
+                            <button style="width: 100%; align-content:center" type="submit">Confirm</button>
+                        </center>
                     </form>
                 </div>
             </div>

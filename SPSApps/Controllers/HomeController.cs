@@ -55,7 +55,7 @@ namespace SPSApps.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddBuilding([Bind("Latitude,Longitude,TotalAvailableParking,FairPerParking, Info")] Building building)
+        public async Task<IActionResult> AddBuilding([Bind("Latitude,Longitude,TotalAvailableParking,FairPerParking, Info, EmergencyFairPerParking")] Building building)
         {
             building.email = _session.GetString("email");
             building.Status = 1;
@@ -144,7 +144,7 @@ namespace SPSApps.Controllers
         }
 
         [HttpPost]
-        public IActionResult Confirm([Bind("Id, IsEmergency")] ParkingRequest parkingRequest)
+        public IActionResult Confirm([Bind("Id, IsEmergency, Hour")] ParkingRequest parkingRequest)
         {
             var email = _session.GetString("email");
             var allLocation = _context.Buildings.FirstOrDefault(f => f.Id == parkingRequest.Id);
@@ -155,6 +155,7 @@ namespace SPSApps.Controllers
                 IsActive = parkingRequest.IsEmergency,
                 BuildingId = allLocation.Id,
                 Fair = allLocation.FairPerParking,
+                Hour = parkingRequest.Hour > 0 ? parkingRequest.Hour : 1,
                 RequestUserEmail = email,
                 Status = 1
             });

@@ -97,6 +97,9 @@ namespace SPSApps.Migrations
                     b.Property<decimal>("Fair")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<int>("Hour")
+                        .HasColumnType("int");
+
                     b.Property<int>("IsActive")
                         .HasColumnType("int");
 
