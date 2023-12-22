@@ -93,7 +93,7 @@ namespace SPSApps.Controllers
             _context.Update(building);
             _context.SaveChanges();
 
-            return RedirectToAction("RequestParking");
+            return RedirectToAction("OwnerDashboard");
         }
 
         public async Task<IActionResult> CompleteParking(int? id)
@@ -127,7 +127,7 @@ namespace SPSApps.Controllers
             {
                 return NotFound();
             }
-            return RedirectToAction("RequestParking");
+            return RedirectToAction("OwnerDashboard");
         }
 
 
@@ -136,6 +136,8 @@ namespace SPSApps.Controllers
             var email = _session.GetString("email");
             var requestLocation = _context.Buildings.FirstOrDefault(f => (f.Id == emergency || f.Id == request) && f.Status == 1);
 
+            var requestedCar = _context.RequestParkings.Where(f => f.IsPaid == false && f.IsActive == 1 && f.Status == 1);
+            var isAvailable = requestLocation.TotalAvailableParking <= requestedCar.Count();// TODO
             if (requestLocation == null || email == null)
             {
                 return RedirectToAction("Index", "Home", new { login = true });
