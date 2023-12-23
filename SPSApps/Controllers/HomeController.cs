@@ -6,6 +6,7 @@ using SPSApps.Models;
 using SPSApps.Models.Parking;
 using SPSApps.Models.Register;
 using System.Diagnostics;
+using System.Xml.Schema;
 
 namespace SPSApps.Controllers
 {
@@ -137,23 +138,28 @@ namespace SPSApps.Controllers
             var requestLocation = _context.Buildings.FirstOrDefault(f => (f.Id == emergency || f.Id == request) && f.Status == 1);
 
             var requestedCar = _context.RequestParkings.Where(f => f.IsPaid == false && f.IsActive == 1 && f.Status == 1);
-            var isAvailable = requestLocation.TotalAvailableParking <= requestedCar.Count();// TODO
+
             if (requestLocation == null || email == null)
             {
                 return RedirectToAction("Index", "Home", new { login = true });
             }
-            return View(new ConfirmDTO(email, requestLocation, emergency >= 1 ? 1 : 0));
+
+            var isAvailable = requestLocation.TotalAvailableParking < requestedCar.Count();
+            var minWaitingTime = requestedCar.ToList().Select(f => { f.AccessTime = f.AccessTime.AddHours(f.Hour); return f; }).Min(j => j.AccessTime);
+            var totalHour = (minWaitingTime - DateTime.Now).TotalHours;
+
+            return View(new ConfirmDTO(email, requestLocation, emergency >= 1 ? 1 : 0, isAvailable, totalHour));
         }
 
         [HttpPost]
-        public IActionResult Confirm([Bind("Id, IsEmergency, Hour")] ParkingRequest parkingRequest)
+        public IActionResult Confirm([Bind("Id, IsEmergency, Hour, WaitingTime, isAvailable")] ParkingRequest parkingRequest)
         {
             var email = _session.GetString("email");
             var allLocation = _context.Buildings.FirstOrDefault(f => f.Id == parkingRequest.Id);
 
             _context.RequestParkings.Add(new RequestParking()
             {
-                AccessTime = DateTime.Now,
+                AccessTime = parkingRequest.isAvailable ? DateTime.Now.AddHours(parkingRequest.WaitingTime) : DateTime.Now,
                 IsActive = parkingRequest.IsEmergency,
                 BuildingId = allLocation.Id,
                 Fair = allLocation.FairPerParking,

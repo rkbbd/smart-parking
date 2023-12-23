@@ -24,7 +24,13 @@
                 <div class="input-box button" id="emergency-parking">
                     <form asp-action="Confirm">
                         <center>
+                            @if (Model.isAvailable)
+                            {
+                                <span style="color:red">No parking available right now. Would you like to book after @Model.WaitingTime.ToString("00.00") hour?</span>
+                            }
                             <input Name="isEmergency" type="number" hidden id="some_property" value="@Model.isEmergency" />
+                            <input Name="isEmergency" type="number" hidden id="some_property" value="@Model.isAvailable" />
+                            <input Name="isEmergency" type="number" hidden id="some_property" value="@Model.WaitingTime" />
                             <div class="form-group" style="width: 300px; align-items:center">
                                 <lebel>How long do you use the parking?/hour</lebel>
                                 <input Name="Hour" class="form-control" type="number" min="1" value="1" placeholder="How long do you use the parking?" />
