@@ -26,10 +26,10 @@
                         <center>
                             @if (Model.isAvailable != 1)
                             {
-                                <span style="color:red">No parking available right now. Would you like to book after @Model.WaitingTime.ToString("00.00") hour?</span>
+                                <span style="color:red">No parking available right now. Would you like to book after @Model.WaitingTime.ToString("00.00") minute/s?</span>
                             }
                             <input Name="isEmergency" type="number" hidden  value="@Model.isEmergency" />
-                            <input Name="isAvailable" type="text" value="@Model.isAvailable" /> 
+                            <input Name="isAvailable" type="text" hidden value="@Model.isAvailable" />
                             <input Name="WaitingTime" type="number" hidden  value="@Model.WaitingTime" />
                             <div class="form-group" style="width: 300px; align-items:center">
                                 <lebel>How long do you use the parking?/hour</lebel>

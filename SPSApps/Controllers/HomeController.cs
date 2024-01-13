@@ -137,18 +137,19 @@ namespace SPSApps.Controllers
             var email = _session.GetString("email");
             var requestLocation = _context.Buildings.FirstOrDefault(f => (f.Id == emergency || f.Id == request) && f.Status == 1);
 
-            var requestedCar = _context.RequestParkings.Where(f => f.IsPaid == false && f.IsActive == 1 && f.Status == 1);
+            var requestedCar = _context.RequestParkings.Where(f => f.IsPaid == false && f.IsActive == 1 && f.Status == 1 && f.RequestUserEmail == requestLocation.email).ToList();
 
             if (requestLocation == null || email == null)
             {
                 return RedirectToAction("Index", "Home", new { login = true });
             }
 
-            var isAvailable = requestLocation.TotalAvailableParking >= requestedCar.Count();
-            var minWaitingTime = requestedCar.Any() ? requestedCar.ToList().Select(f => { f.AccessTime = f.AccessTime.AddHours(f.Hour); return f; }).Min(j => j.AccessTime) : DateTime.Now;
-            var totalHour = (minWaitingTime - DateTime.Now).TotalHours;
+            var isAvailable = requestLocation.TotalAvailableParking > requestedCar.Count();
+            var totalWaitingHour = requestedCar.Sum(f => f.Hour);
+            var minWaitingTime = requestedCar.Any() ? requestedCar.Select(f => { f.AccessTime = f.AccessTime.AddHours(totalWaitingHour); return f; }).Min(j => j.AccessTime) : DateTime.Now;
+            var TotalMinutes = (minWaitingTime - DateTime.Now).TotalMinutes;
 
-            return View(new ConfirmDTO(email, requestLocation, emergency >= 1 ? 1 : 0, isAvailable ? 1 : 0, totalHour));
+            return View(new ConfirmDTO(email, requestLocation, emergency >= 1 ? 1 : 0, isAvailable ? 1 : 0, TotalMinutes));
         }
 
         [HttpPost]
