@@ -137,7 +137,7 @@ namespace SPSApps.Controllers
             var email = _session.GetString("email");
             var requestLocation = _context.Buildings.FirstOrDefault(f => (f.Id == emergency || f.Id == request) && f.Status == 1);
 
-            var requestedCar = _context.RequestParkings.Where(f => f.IsPaid == false && f.IsActive == 1 && f.Status == 1 && f.RequestUserEmail == requestLocation.email).ToList();
+            var requestedCar = _context.RequestParkings.Where(f => f.IsPaid == false && f.IsActive == 1 && f.Status == 1 && f.BuildingId == requestLocation.Id).ToList();
 
             if (requestLocation == null || email == null)
             {

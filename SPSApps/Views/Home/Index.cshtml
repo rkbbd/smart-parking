@@ -167,7 +167,7 @@
                                             @item.value.AccessTime
                                         </td>
                                         <td>
-                                            @((DateTime.Now - item.value.AccessTime).Hours + " :" + (DateTime.Now - item.value.AccessTime).Minutes)
+                                            @((DateTime.Now - item.value.AccessTime).Hours + " :" + (DateTime.Now - item.value.AccessTime).Minutes) // TODO Server side coding
                                         </td>
                                         <td>
                                             @(item.value.Fair * ((DateTime.Now - item.value.AccessTime).Hours))
