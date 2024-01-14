@@ -166,14 +166,33 @@
                                         <td>
                                             @item.value.AccessTime
                                         </td>
-                                        <td>
-                                            @((DateTime.Now - item.value.AccessTime).Hours + " :" + (DateTime.Now - item.value.AccessTime).Minutes) // TODO Server side coding
+                                        <td>@if(item.value.AccessTime < DateTime.Now)
+                                            {
+                                                @((DateTime.Now - item.value.AccessTime).Hours + " :" + (DateTime.Now - item.value.AccessTime).Minutes)
+                                            }
+                                            else
+                                            {
+                                             <span>--</span>
+                                            }
+
                                         </td>
                                         <td>
-                                            @(item.value.Fair * ((DateTime.Now - item.value.AccessTime).Hours))
+                                            @if (item.value.AccessTime < DateTime.Now)
+                                            {
+                                                @(item.value.Fair * ((DateTime.Now - item.value.AccessTime).Hours))
+                                            }else{
+                                                <span>--</span>
+                                            }
                                         </td>
                                         <td>
-                                            <a asp-action="CompleteParking" asp-route-id="@item.value.Id">Leave</a>
+                                            <a asp-action="CompleteParking" asp-route-id="@item.value.Id">
+                                                @if (item.value.AccessTime < DateTime.Now)
+                                                {
+                                                    <span>Leave</span>
+                                                }else{
+                                                    <span></span>
+                                                }
+                                            </a>
                                         </td>
 
                                     </tr>

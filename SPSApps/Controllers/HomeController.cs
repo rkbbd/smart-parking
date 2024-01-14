@@ -160,7 +160,7 @@ namespace SPSApps.Controllers
 
             _context.RequestParkings.Add(new RequestParking()
             {
-                AccessTime = parkingRequest.IsAvailable == 1 ? DateTime.Now.AddHours(parkingRequest.WaitingTime) : DateTime.Now,
+                AccessTime = parkingRequest.IsAvailable == 1 ?  DateTime.Now : DateTime.Now.AddMinutes(parkingRequest.WaitingTime),
                 IsActive = parkingRequest.IsEmergency,
                 BuildingId = allLocation.Id,
                 Fair = allLocation.FairPerParking,
