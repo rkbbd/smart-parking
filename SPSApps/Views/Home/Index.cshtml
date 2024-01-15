@@ -164,11 +164,11 @@
                                 {
                                     <tr>
                                         <td>
-                                            @item.value.AccessTime
+                                            @item.value.AccessTime 
                                         </td>
-                                        <td>@if(item.value.AccessTime < DateTime.Now)
+                                        <td>@if(item.value.AccessTime < TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Asia/Dhaka")))
                                             {
-                                                @((DateTime.Now - item.value.AccessTime).Hours + " :" + (DateTime.Now - item.value.AccessTime).Minutes)
+                                                @((TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Asia/Dhaka")) - item.value.AccessTime).Hours + " :" + (TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Asia/Dhaka")) - item.value.AccessTime).Minutes)
                                             }
                                             else
                                             {
@@ -177,16 +177,16 @@
 
                                         </td>
                                         <td>
-                                            @if (item.value.AccessTime < DateTime.Now)
+                                            @if (item.value.AccessTime < TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Asia/Dhaka")))
                                             {
-                                                @(item.value.Fair * ((DateTime.Now - item.value.AccessTime).Hours))
+                                                @(item.value.Fair * ((TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Asia/Dhaka")) - item.value.AccessTime).Hours))
                                             }else{
                                                 <span>--</span>
                                             }
                                         </td>
                                         <td>
                                             <a asp-action="CompleteParking" asp-route-id="@item.value.Id">
-                                                @if (item.value.AccessTime < DateTime.Now)
+                                                @if (item.value.AccessTime < TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Asia/Dhaka")))
                                                 {
                                                     <span>Leave</span>
                                                 }else{
